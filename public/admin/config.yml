@@ -53,9 +53,153 @@ collections:
       - { label: "Marcar como recém-chegado?", name: recemChegado, widget: boolean, default: false }
       - label: Equipamento
         name: equipamento
-        widget: list
-        field: { label: Item, name: item, widget: string }
+        widget: object
+        collapsed: true
         required: false
+        fields:
+          - label: Informação Geral
+            name: geral
+            widget: select
+            multiple: true
+            required: false
+            options:
+              [
+                "Ar condicionado",
+                "Ar condicionado automático",
+                "Ar condicionado automático bi-zona",
+                "Não fumador",
+                "Semi-novo",
+                "Teto de abrir",
+                "Teto panorâmico",
+                "Iluminação ambiente",
+              ]
+          - label: Exterior
+            name: exterior
+            widget: select
+            multiple: true
+            required: false
+            options: ["Jantes de liga leve", "Pintura metalizada", "Barras de tejadilho", "Reboque"]
+          - label: Faróis
+            name: farois
+            widget: select
+            multiple: true
+            required: false
+            options:
+              [
+                "Faróis LED",
+                "Faróis Full LED",
+                "Faróis de nevoeiro",
+                "Faróis direcionais",
+                "Faróis traseiros LED",
+                "Luzes diurnas LED",
+                "Luzes direcionais dinâmicas",
+                "Farolim traseiro LED",
+                "Faróis máximos automáticos",
+                "Faróis reguláveis em altura",
+              ]
+          - label: Retrovisores
+            name: retrovisores
+            widget: select
+            multiple: true
+            required: false
+            options:
+              [
+                "Retrovisores exteriores com regulação elétrica",
+                "Retrovisores com anti-encadeamento",
+                "Retrovisores exteriores retráteis eletricamente",
+              ]
+          - label: Vidros
+            name: vidros
+            widget: select
+            multiple: true
+            required: false
+            options:
+              ["Vidros elétricos dianteiros e traseiros", "Vidros escurecidos", "Vidros insonorizantes e atérmicos"]
+          - label: Bancos
+            name: bancos
+            widget: select
+            multiple: true
+            required: false
+            options:
+              [
+                "Bancos em pele",
+                "Estofos em pele e tecido",
+                "Bancos desportivos",
+                "Bancos elétricos",
+                "Bancos aquecidos",
+                "Bancos rebatíveis",
+                "Encostos de cabeça traseiros",
+              ]
+          - label: Volante
+            name: volante
+            widget: select
+            multiple: true
+            required: false
+            options:
+              [
+                "Volante multifunções",
+                "Volante em pele",
+                "Volante regulável em altura",
+                "Volante regulável em profundidade",
+                "Comandos do rádio no volante",
+              ]
+          - label: Multimédia & Tecnologia
+            name: multimedia
+            widget: select
+            multiple: true
+            required: false
+            options:
+              [
+                "Navegação GPS",
+                "Bluetooth",
+                "Apple CarPlay",
+                "Android Auto",
+                "Ecrã tátil",
+                "Digital Cockpit",
+                "Head-up display",
+                "Sistema de som premium",
+                "USB",
+                "Tomada 12V",
+                "Carregador sem fios",
+              ]
+          - label: Segurança & Desempenho
+            name: seguranca
+            widget: select
+            multiple: true
+            required: false
+            options:
+              [
+                "ABS",
+                "Airbag do condutor",
+                "Airbag do passageiro",
+                "Airbags laterais",
+                "Airbags de cortina",
+                "ESP - Controlo eletrónico de estabilidade",
+                "Isofix",
+                "Alarme",
+                "Imobilizador",
+                "Câmara de marcha atrás",
+                "Sensores de estacionamento",
+                "Sensor de estacionamento dianteiro",
+                "Assistente de estacionamento",
+                "Assistente de manutenção de faixa",
+                "Assistente de ângulo morto",
+                "Controlo de cruzeiro adaptativo",
+                "Travão de mão elétrico",
+                "Sistema start/stop",
+                "Chave inteligente",
+                "Suspensão desportiva",
+                "Suspensão pneumática",
+                "Fecho central",
+                "Direção assistida",
+                "Sensores de chuva",
+                "Follow me home",
+              ]
+          - label: "Outros (não está na lista)"
+            name: outros
+            widget: list
+            required: false
+            field: { label: Item, name: item, widget: string }
       - { label: Descrição, name: descricao, widget: text }
       - { label: Garantia, name: garantia, widget: string, default: "12 meses de garantia mecânica" }
       - { label: Localização, name: localizacao, widget: string }

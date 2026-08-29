@@ -16,8 +16,10 @@ destaque: false
 carroDaSemana: false
 recemChegado: false
 equipamento:
-  - Navegação
-  - Sensores de estacionamento
+  multimedia:
+    - Navegação GPS
+  seguranca:
+    - Sensores de estacionamento
 descricao: Vendido em junho de 2026.
 garantia: 12 meses de garantia mecânica
 localizacao: Porto

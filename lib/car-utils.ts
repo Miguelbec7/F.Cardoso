@@ -9,6 +9,32 @@ export type Transmission = "Manual" | "Automática";
 export type BodyType = "Berlina" | "Break" | "SUV" | "Hatchback" | "Coupé" | "Comercial";
 export type CarStatus = "disponivel" | "reservado" | "vendido";
 
+export type Equipamento = {
+  geral?: string[];
+  exterior?: string[];
+  farois?: string[];
+  retrovisores?: string[];
+  vidros?: string[];
+  bancos?: string[];
+  volante?: string[];
+  multimedia?: string[];
+  seguranca?: string[];
+  outros?: string[];
+};
+
+export const EQUIPAMENTO_LABELS: Record<keyof Equipamento, string> = {
+  geral: "Informação Geral",
+  exterior: "Exterior",
+  farois: "Faróis",
+  retrovisores: "Retrovisores",
+  vidros: "Vidros",
+  bancos: "Bancos",
+  volante: "Volante",
+  multimedia: "Multimédia & Tecnologia",
+  seguranca: "Segurança & Desempenho",
+  outros: "Outros",
+};
+
 export type Car = {
   slug: string;
   marca: string;
@@ -28,7 +54,7 @@ export type Car = {
   destaque: boolean;
   carroDaSemana: boolean;
   recemChegado: boolean;
-  equipamento: string[];
+  equipamento: Equipamento;
   descricao: string;
   garantia: string;
   localizacao: string;

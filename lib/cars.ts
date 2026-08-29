@@ -33,7 +33,7 @@ function readCars(): Car[] {
       destaque: !!data.destaque,
       carroDaSemana: !!data.carroDaSemana,
       recemChegado: !!data.recemChegado,
-      equipamento: data.equipamento || [],
+      equipamento: data.equipamento || {},
       descricao: data.descricao || "",
       garantia: data.garantia || "",
       localizacao: data.localizacao || "",

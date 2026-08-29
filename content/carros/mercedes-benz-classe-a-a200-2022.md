@@ -17,10 +17,14 @@ destaque: true
 carroDaSemana: false
 recemChegado: false
 equipamento:
-  - MBUX
-  - Ambient light
-  - Sensores de estacionamento
-  - Apple CarPlay
+  geral:
+    - Iluminação ambiente
+  multimedia:
+    - Apple CarPlay
+  seguranca:
+    - Sensores de estacionamento
+  outros:
+    - MBUX
 descricao: Mercedes-Benz Classe A com pack AMG Line, interior premium e tecnologia de assistência à condução de última geração.
 garantia: 12 meses de garantia mecânica
 localizacao: Braga

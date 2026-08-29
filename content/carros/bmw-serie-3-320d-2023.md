@@ -16,10 +16,14 @@ destaque: true
 carroDaSemana: false
 recemChegado: true
 equipamento:
-  - Navegação
-  - Bancos em pele
-  - Câmara de estacionamento
-  - Faróis LED adaptativos
+  farois:
+    - Faróis LED
+  bancos:
+    - Estofos em pele e tecido
+  multimedia:
+    - Navegação GPS
+  seguranca:
+    - Câmara de marcha atrás
 descricao: BMW Série 3 Touring em excelente estado, revisões em concessionário, um único proprietário. Ideal para quem procura conforto e baixo consumo sem abdicar do prazer de condução.
 garantia: 12 meses de garantia mecânica
 localizacao: Porto

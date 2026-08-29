@@ -16,9 +16,11 @@ destaque: false
 carroDaSemana: false
 recemChegado: false
 equipamento:
-  - Head-up display
-  - Bancos em pele
-  - Live cockpit professional
+  multimedia:
+    - Head-up display
+    - Digital Cockpit
+  bancos:
+    - Estofos em pele e tecido
 descricao: Vendido em agosto de 2026.
 garantia: 12 meses de garantia mecânica
 localizacao: Porto

@@ -16,10 +16,14 @@ destaque: true
 carroDaSemana: false
 recemChegado: true
 equipamento:
-  - Digital Cockpit Pro
-  - Suspensão DCC
-  - Bancos desportivos
-  - Travões vermelhos
+  multimedia:
+    - Digital Cockpit
+  bancos:
+    - Bancos desportivos
+  seguranca:
+    - Suspensão desportiva
+  outros:
+    - Travões com pinças vermelhas
 descricao: Golf GTD praticamente novo, com muito baixa quilometragem e todo o equipamento desportivo de série.
 garantia: 24 meses de garantia mecânica
 localizacao: Braga

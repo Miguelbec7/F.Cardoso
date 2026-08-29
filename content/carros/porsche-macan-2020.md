@@ -16,8 +16,10 @@ destaque: false
 carroDaSemana: false
 recemChegado: false
 equipamento:
-  - PASM
-  - Bancos elétricos
+  bancos:
+    - Bancos elétricos
+  outros:
+    - PASM
 descricao: Vendido em maio de 2026.
 garantia: 12 meses de garantia mecânica
 localizacao: Porto

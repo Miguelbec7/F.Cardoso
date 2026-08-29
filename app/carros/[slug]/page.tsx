@@ -14,6 +14,7 @@ import { getSiteSettings } from "@/lib/settings";
 import { WhatsAppIcon } from "@/components/icons";
 import { CarRow } from "@/components/CarRow";
 import { CarGallery } from "@/components/CarGallery";
+import { EquipmentList } from "@/components/EquipmentList";
 
 export function generateStaticParams() {
   return cars.map((c) => ({ slug: c.slug }));
@@ -96,12 +97,8 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
           </div>
 
           <div className="mt-8">
-            <h2 className="text-lg font-extrabold tracking-tight">Equipamento</h2>
-            <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3">
-              {car.equipamento.map((item) => (
-                <li key={item} className="text-[0.88rem] text-ink-dim">· {item}</li>
-              ))}
-            </ul>
+            <h2 className="mb-4 text-lg font-extrabold tracking-tight">Equipamento</h2>
+            <EquipmentList equipamento={car.equipamento} />
           </div>
         </div>
 

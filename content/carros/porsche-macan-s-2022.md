@@ -16,10 +16,14 @@ destaque: false
 carroDaSemana: true
 recemChegado: false
 equipamento:
-  - Chassis PASM
-  - Bancos desportivos Plus
-  - Sound Package Plus
-  - Air suspension
+  bancos:
+    - Bancos desportivos
+  multimedia:
+    - Sistema de som premium
+  seguranca:
+    - Suspensão pneumática
+  outros:
+    - Chassis PASM
 descricao: Porsche Macan S com primeiro proprietário, livro de revisões completo e um dos SUVs desportivos mais equilibrados do mercado.
 garantia: 12 meses de garantia mecânica
 localizacao: Porto

@@ -16,8 +16,10 @@ destaque: false
 carroDaSemana: false
 recemChegado: false
 equipamento:
-  - MBUX
-  - Faróis LED
+  farois:
+    - Faróis LED
+  outros:
+    - MBUX
 descricao: Vendido em julho de 2026.
 garantia: 12 meses de garantia mecânica
 localizacao: Braga
