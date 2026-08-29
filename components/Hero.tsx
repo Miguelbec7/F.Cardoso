@@ -6,72 +6,69 @@ import type { Car } from "@/lib/car-utils";
 import { formatPrice, whatsappLink } from "@/lib/car-utils";
 import { CarSilhouette, WhatsAppIcon } from "./icons";
 
-const tones = [
-  "radial-gradient(140% 100% at 80% 0%, #1b2c4d 0%, #0a0c10 60%)",
-  "radial-gradient(140% 100% at 80% 0%, #202821 0%, #0a0c10 60%)",
-  "radial-gradient(140% 100% at 80% 0%, #1c2333 0%, #0a0c10 60%)",
-];
-
-export function Hero({ cars, whatsappNumber }: { cars: Car[]; whatsappNumber: string }) {
+export function Hero({
+  cars,
+  whatsappNumber,
+  videoSrc,
+  videoPoster,
+}: {
+  cars: Car[];
+  whatsappNumber: string;
+  videoSrc?: string;
+  videoPoster?: string;
+}) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     if (cars.length < 2) return;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduceMotion) return;
-    const id = setInterval(() => setIndex((i) => (i + 1) % cars.length), 5500);
+    const id = setInterval(() => setIndex((i) => (i + 1) % cars.length), 5000);
     return () => clearInterval(id);
   }, [cars.length]);
 
   const car = cars[index];
 
   return (
-    <section className="relative flex min-h-[88vh] items-end overflow-hidden bg-midnight">
-      <div className="absolute inset-0">
-        {cars.map((c, i) => (
-          <div
-            key={c.slug}
-            aria-hidden={i !== index}
-            className="absolute inset-0 transition-opacity duration-[1200ms]"
-            style={{ opacity: i === index ? 1 : 0 }}
-          >
-            {c.video ? (
-              <video
-                className="h-full w-full object-cover"
-                src={c.video}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload={i === 0 ? "auto" : "none"}
-              />
-            ) : (
-              <div className="relative h-full w-full" style={{ backgroundImage: tones[i % tones.length] }}>
-                <CarSilhouette
-                  className="absolute -right-16 bottom-[-8%] w-[85%] max-w-[720px] opacity-[0.12]"
-                  stroke="#ffffff"
-                />
-              </div>
-            )}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(90deg, rgba(8,10,13,0.92) 0%, rgba(8,10,13,0.62) 42%, rgba(8,10,13,0.35) 100%), linear-gradient(0deg, rgba(8,10,13,0.9) 0%, rgba(8,10,13,0.15) 38%, rgba(8,10,13,0.05) 60%)",
-              }}
-            />
+    <section className="relative flex flex-col bg-midnight md:min-h-[90vh] md:flex-row-reverse">
+      {/* Vídeo / imagem — coluna própria, não centrada nem a ecrã inteiro */}
+      <div className="relative h-[46vh] w-full overflow-hidden md:h-auto md:w-[42%]">
+        {videoSrc ? (
+          <video
+            className="h-full w-full object-cover"
+            src={videoSrc}
+            poster={videoPoster}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+          />
+        ) : (
+          <div className="relative flex h-full w-full items-center justify-center bg-[radial-gradient(140%_100%_at_50%_0%,#1b2c4d_0%,#0a0c10_60%)]">
+            <CarSilhouette className="w-4/5 max-w-[420px] opacity-[0.14]" stroke="#ffffff" />
           </div>
-        ))}
+        )}
+        {/* transição suave para o painel de texto */}
+        <div
+          className="pointer-events-none absolute inset-0 md:hidden"
+          style={{ background: "linear-gradient(0deg, rgba(8,10,13,1) 0%, rgba(8,10,13,0) 32%)" }}
+        />
+        <div
+          className="pointer-events-none absolute inset-0 hidden md:block"
+          style={{ background: "linear-gradient(90deg, rgba(8,10,13,0.85) 0%, rgba(8,10,13,0) 22%)" }}
+        />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-16">
+      {/* Texto — coluna própria à esquerda */}
+      <div className="relative z-10 flex flex-1 flex-col justify-center px-5 py-10 md:px-12 md:py-16 lg:px-16">
         <span className="text-[0.72rem] font-bold tracking-[0.16em] text-brand-glow uppercase">
           Compra · Venda · Intermediação
         </span>
-        <h1 className="mt-2 max-w-[12ch] text-[clamp(2.1rem,8vw,3.6rem)] leading-[1.04] font-extrabold tracking-tight text-balance text-white">
+        <h1 className="mt-2 max-w-[13ch] text-[clamp(2.1rem,6vw,3.4rem)] leading-[1.04] font-extrabold tracking-tight text-balance text-white">
           Encontre o carro certo para si.
         </h1>
-        <p className="mt-3.5 max-w-[42ch] text-[1.02rem] text-white/70">
+        <p className="mt-3.5 max-w-[46ch] text-[1.02rem] text-white/70">
           Viaturas selecionadas, verificadas e prontas a conduzir — com o acompanhamento de uma equipa que trata
           cada venda como se fosse a sua.
         </p>

@@ -4,6 +4,8 @@ import path from "node:path";
 export type SiteSettings = {
   whatsappNumber: string;
   telefone: string;
+  heroVideo?: string;
+  heroVideoPoster?: string;
   stats: {
     viaturasVendidas: string;
     clientesSatisfeitos: string;

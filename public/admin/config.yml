@@ -92,6 +92,8 @@ collections:
         fields:
           - { label: Número de WhatsApp (só dígitos, com indicativo 351), name: whatsappNumber, widget: string }
           - { label: Telefone (para exibir), name: telefone, widget: string }
+          - { label: Vídeo de fundo do Hero, name: heroVideo, widget: file, required: false }
+          - { label: Poster do vídeo do Hero (frame estático), name: heroVideoPoster, widget: image, required: false }
           - label: Estatísticas
             name: stats
             widget: object
