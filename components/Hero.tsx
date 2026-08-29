@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Car } from "@/lib/car-utils";
 import { formatPrice, whatsappLink } from "@/lib/car-utils";
 import { CarSilhouette, WhatsAppIcon } from "./icons";
+import { BrandWatermark } from "./BrandMark";
 
 export function Hero({
   cars,
@@ -61,7 +62,9 @@ export function Hero({
       </div>
 
       {/* Texto — coluna própria à esquerda */}
-      <div className="relative z-10 flex flex-1 flex-col justify-center px-5 py-10 md:px-12 md:py-16 lg:px-16">
+      <div className="relative z-10 flex flex-1 flex-col justify-center overflow-hidden px-5 py-10 md:px-12 md:py-16 lg:px-16">
+        <BrandWatermark className="pointer-events-none absolute top-6 left-4 h-40 w-40 text-white opacity-[0.12] select-none md:top-8 md:left-10 md:h-64 md:w-64 lg:left-14" />
+
         <span className="text-[0.72rem] font-bold tracking-[0.16em] text-brand-glow uppercase">
           Compra · Venda · Intermediação
         </span>
