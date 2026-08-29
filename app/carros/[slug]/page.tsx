@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   cars,
@@ -12,8 +11,9 @@ import {
   carInterestMessage,
 } from "@/lib/cars";
 import { getSiteSettings } from "@/lib/settings";
-import { CarSilhouette, WhatsAppIcon } from "@/components/icons";
+import { WhatsAppIcon } from "@/components/icons";
 import { CarRow } from "@/components/CarRow";
+import { CarGallery } from "@/components/CarGallery";
 
 export function generateStaticParams() {
   return cars.map((c) => ({ slug: c.slug }));
@@ -45,7 +45,6 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
   const { whatsappNumber } = getSiteSettings();
   const isSold = car.estado === "vendido";
   const similar = getSimilarCars(car);
-  const [cover, ...thumbs] = car.fotos;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -79,29 +78,17 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
 
       <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr]">
         <div>
-          <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-card border border-line bg-linear-to-br from-surface-2 to-canvas-soft">
-            {isSold && (
-              <span className="absolute top-3 left-3 rounded-full bg-ink px-3 py-1.5 text-[0.68rem] font-extrabold tracking-wide text-white uppercase">
-                Vendido
-              </span>
-            )}
-            {cover ? (
-              <Image src={cover} alt={`${car.marca} ${car.modelo}`} fill className="object-cover" priority />
-            ) : (
-              <CarSilhouette className="w-2/3 opacity-40" stroke="#9aa0ac" />
-            )}
-          </div>
-          <div className="mt-3 grid grid-cols-4 gap-3">
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="relative flex aspect-square items-center justify-center overflow-hidden rounded-lg border border-line bg-surface">
-                {thumbs[i] ? (
-                  <Image src={thumbs[i]} alt="" fill className="object-cover" />
-                ) : (
-                  <CarSilhouette className="w-2/3 opacity-25" stroke="#9aa0ac" />
-                )}
-              </div>
-            ))}
-          </div>
+          <CarGallery
+            fotos={car.fotos}
+            alt={`${car.marca} ${car.modelo}`}
+            badge={
+              isSold ? (
+                <span className="absolute top-3 left-3 z-10 rounded-full bg-ink px-3 py-1.5 text-[0.68rem] font-extrabold tracking-wide text-white uppercase">
+                  Vendido
+                </span>
+              ) : undefined
+            }
+          />
 
           <div className="mt-10">
             <h2 className="text-lg font-extrabold tracking-tight">Descrição</h2>
