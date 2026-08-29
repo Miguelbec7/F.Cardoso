@@ -15,13 +15,40 @@ collections:
     folder: content/carros
     create: true
     slug: "{{fields.marca}}-{{fields.modelo}}-{{fields.versao}}-{{fields.ano}}"
-    summary: "{{marca}} {{modelo}} — {{ano}} — {{preco}} €"
+    summary: "{{marca}} {{modelo}} — {{ano}} — {{preco}} € · {{estado}}"
     sortable_fields: ["criadoEm", "preco", "ano"]
+    view_groups:
+      - { label: "Por estado", field: estado }
+    view_filters:
+      - { label: "Disponíveis", field: estado, pattern: "disponivel" }
+      - { label: "Reservados", field: estado, pattern: "reservado" }
+      - { label: "Vendidos", field: estado, pattern: "vendido" }
+      - { label: "Em destaque", field: destaque, pattern: true }
+      - { label: "Carro da semana", field: carroDaSemana, pattern: true }
+      - { label: "Recém-chegados", field: recemChegado, pattern: true }
     fields:
       - { label: Marca, name: marca, widget: string }
       - { label: Modelo, name: modelo, widget: string }
       - { label: Versão, name: versao, widget: string }
       - { label: Ano, name: ano, widget: number, value_type: int }
+      - label: Estado
+        name: estado
+        widget: select
+        hint: "Muda para \"Vendido\" assim que o carro sair — fica no histórico, só deixa de aparecer no stock disponível."
+        options:
+          - { label: Disponível, value: disponivel }
+          - { label: Reservado, value: reservado }
+          - { label: Vendido, value: vendido }
+        default: disponivel
+      - { label: "Em destaque na homepage?", name: destaque, widget: boolean, default: false }
+      - {
+          label: "É o carro da semana?",
+          name: carroDaSemana,
+          widget: boolean,
+          default: false,
+          hint: "Só pode haver um de cada vez — ao ativar este, desativa manualmente nos outros carros.",
+        }
+      - { label: "Marcar como recém-chegado?", name: recemChegado, widget: boolean, default: false }
       - { label: Quilómetros, name: km, widget: number, value_type: int }
       - label: Combustível
         name: combustivel
@@ -40,17 +67,6 @@ collections:
       - { label: Cor, name: cor, widget: string, required: false }
       - { label: Preço (€), name: preco, widget: number, value_type: int }
       - { label: Preço anterior (€), name: precoAnterior, widget: number, value_type: int, required: false }
-      - label: Estado
-        name: estado
-        widget: select
-        options:
-          - { label: Disponível, value: disponivel }
-          - { label: Reservado, value: reservado }
-          - { label: Vendido, value: vendido }
-        default: disponivel
-      - { label: "Em destaque?", name: destaque, widget: boolean, default: false }
-      - { label: "É o carro da semana?", name: carroDaSemana, widget: boolean, default: false }
-      - { label: "Marcar como recém-chegado?", name: recemChegado, widget: boolean, default: false }
       - label: Equipamento
         name: equipamento
         widget: object
