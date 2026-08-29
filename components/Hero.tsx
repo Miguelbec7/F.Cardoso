@@ -35,16 +35,26 @@ export function Hero({
       {/* Vídeo / imagem — coluna própria, não centrada nem a ecrã inteiro */}
       <div className="relative h-[46vh] w-full overflow-hidden md:h-auto md:w-[42%]">
         {videoSrc ? (
-          <video
-            className="h-full w-full object-cover"
-            src={videoSrc}
-            poster={videoPoster}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-          />
+          <>
+            {/* fundo desfocado (imagem estática) — preenche a coluna sem ampliar o vídeo nítido nem duplicar o consumo de dados */}
+            {videoPoster && (
+              <div
+                className="absolute inset-0 scale-110 bg-cover bg-center opacity-60 blur-2xl"
+                style={{ backgroundImage: `url(${videoPoster})` }}
+                aria-hidden="true"
+              />
+            )}
+            <video
+              className="relative h-full w-full object-contain"
+              src={videoSrc}
+              poster={videoPoster}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+            />
+          </>
         ) : (
           <div className="relative flex h-full w-full items-center justify-center bg-[radial-gradient(140%_100%_at_50%_0%,#1b2c4d_0%,#0a0c10_60%)]">
             <CarSilhouette className="w-4/5 max-w-[420px] opacity-[0.14]" stroke="#ffffff" />
