@@ -12,6 +12,7 @@ potencia: 150
 cor: Prateado Florete
 preco: 22400
 estado: vendido
+vendidoEm: 2026-06-15
 destaque: false
 carroDaSemana: false
 recemChegado: false

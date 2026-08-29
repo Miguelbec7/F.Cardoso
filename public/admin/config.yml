@@ -40,6 +40,16 @@ collections:
           - { label: Reservado, value: reservado }
           - { label: Vendido, value: vendido }
         default: disponivel
+      - {
+          label: "Data de venda",
+          name: vendidoEm,
+          widget: datetime,
+          format: "YYYY-MM-DD",
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+          required: false,
+          hint: "Preencher só quando mudares o Estado para \"Vendido\" — define a ordem em \"Recentemente vendidos\".",
+        }
       - { label: "Em destaque na homepage?", name: destaque, widget: boolean, default: false }
       - {
           label: "É o carro da semana?",

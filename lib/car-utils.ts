@@ -59,6 +59,8 @@ export type Car = {
   garantia: string;
   localizacao: string;
   criadoEm: string;
+  /** Preenchido quando o estado passa a "vendido" — usado para ordenar "Recentemente vendidos". */
+  vendidoEm?: string;
   /** Caminhos para /public/uploads, geridos pelo backoffice (Decap CMS). Vazio = usa a ilustração placeholder. */
   fotos: string[];
   /** Caminho para /public/uploads de um vídeo do carro, opcional. */

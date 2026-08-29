@@ -11,7 +11,7 @@ import { getSiteSettings } from "@/lib/settings";
 
 export default function HomePage() {
   const featured = getFeaturedCars();
-  const sold = getSoldCars();
+  const sold = getSoldCars(8);
   const carOfWeek = getCarOfTheWeek();
   const heroCars = featured.slice(0, 3);
   const brands = getBrands();

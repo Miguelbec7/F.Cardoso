@@ -12,6 +12,7 @@ potencia: 245
 cor: Branco Carrara
 preco: 39900
 estado: vendido
+vendidoEm: 2026-05-15
 destaque: false
 carroDaSemana: false
 recemChegado: false

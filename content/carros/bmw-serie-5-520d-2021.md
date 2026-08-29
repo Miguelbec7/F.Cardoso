@@ -12,6 +12,7 @@ potencia: 190
 cor: Preto Safira
 preco: 34900
 estado: vendido
+vendidoEm: 2026-08-15
 destaque: false
 carroDaSemana: false
 recemChegado: false

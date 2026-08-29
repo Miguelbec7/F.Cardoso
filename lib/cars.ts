@@ -38,6 +38,7 @@ function readCars(): Car[] {
       garantia: data.garantia || "",
       localizacao: data.localizacao || "",
       criadoEm: String(data.criadoEm),
+      vendidoEm: data.vendidoEm || undefined,
       fotos: data.fotos || [],
       video: data.video || undefined,
     } satisfies Car;
@@ -56,8 +57,11 @@ export function getAvailableCars() {
     .sort((a, b) => +new Date(b.criadoEm) - +new Date(a.criadoEm));
 }
 
-export function getSoldCars() {
-  return cars.filter((c) => c.estado === "vendido");
+export function getSoldCars(limit?: number) {
+  const sold = [...cars]
+    .filter((c) => c.estado === "vendido")
+    .sort((a, b) => +new Date(b.vendidoEm || b.criadoEm) - +new Date(a.vendidoEm || a.criadoEm));
+  return limit ? sold.slice(0, limit) : sold;
 }
 
 export function getFeaturedCars() {

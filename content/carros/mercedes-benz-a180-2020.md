@@ -12,6 +12,7 @@ potencia: 136
 cor: Cinzento Montanha
 preco: 21900
 estado: vendido
+vendidoEm: 2026-07-15
 destaque: false
 carroDaSemana: false
 recemChegado: false
