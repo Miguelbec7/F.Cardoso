@@ -79,9 +79,9 @@ export function Hero({
           Compra · Venda · Intermediação
         </span>
         <h1
-          className={`mt-2 max-w-[13ch] text-[clamp(2.1rem,6vw,3.4rem)] leading-[1.04] font-extrabold tracking-tight text-balance text-white ${reveal(90)}`}
+          className={`mt-2 max-w-[19ch] text-[clamp(2rem,5.4vw,3.1rem)] leading-[1.08] font-extrabold tracking-tight text-balance text-white ${reveal(90)}`}
         >
-          Encontre o carro certo para si.
+          Comprar um carro usado devia ser simples assim.
         </h1>
         <p className={`mt-3.5 max-w-[46ch] text-[1.02rem] text-white/70 ${reveal(180)}`}>
           Viaturas selecionadas, verificadas e prontas a conduzir — com o acompanhamento de uma equipa que trata
