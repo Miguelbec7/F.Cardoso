@@ -27,7 +27,7 @@ equipamento:
     - Teto panorâmico
 descricao: Vendido em junho de 2026.
 garantia: 12 meses de garantia mecânica
-localizacao: Porto
+localizacao: Elvas
 criadoEm: 2026-01-20
 fotos: []
 video: ""

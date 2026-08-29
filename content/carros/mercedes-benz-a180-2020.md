@@ -23,7 +23,7 @@ equipamento:
     - MBUX
 descricao: Vendido em julho de 2026.
 garantia: 12 meses de garantia mecânica
-localizacao: Braga
+localizacao: Elvas
 criadoEm: 2026-02-11
 fotos: []
 video: ""

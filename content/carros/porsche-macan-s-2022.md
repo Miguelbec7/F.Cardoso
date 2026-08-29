@@ -26,7 +26,7 @@ equipamento:
     - Chassis PASM
 descricao: Porsche Macan S com primeiro proprietário, livro de revisões completo e um dos SUVs desportivos mais equilibrados do mercado.
 garantia: 12 meses de garantia mecânica
-localizacao: Porto
+localizacao: Elvas
 criadoEm: 2026-06-01
 fotos: []
 video: ""

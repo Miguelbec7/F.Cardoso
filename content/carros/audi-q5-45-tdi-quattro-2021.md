@@ -39,7 +39,7 @@ equipamento:
 descricao: Audi Q5 com tração integral, acabamento S line e revisões sempre em
   dia. Viatura robusta, pronta para cidade e estrada.
 garantia: 12 meses de garantia mecânica
-localizacao: Porto
+localizacao: Elvas
 criadoEm: 2026-05-14
 fotos: []
 video: ""

@@ -26,7 +26,7 @@ equipamento:
     - Travões com pinças vermelhas
 descricao: Golf GTD praticamente novo, com muito baixa quilometragem e todo o equipamento desportivo de série.
 garantia: 24 meses de garantia mecânica
-localizacao: Braga
+localizacao: Elvas
 criadoEm: 2026-08-10
 fotos: []
 video: ""

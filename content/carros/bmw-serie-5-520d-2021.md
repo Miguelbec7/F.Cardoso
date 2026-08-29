@@ -24,7 +24,7 @@ equipamento:
     - Estofos em pele e tecido
 descricao: Vendido em agosto de 2026.
 garantia: 12 meses de garantia mecânica
-localizacao: Porto
+localizacao: Elvas
 criadoEm: 2026-03-01
 fotos: []
 video: ""

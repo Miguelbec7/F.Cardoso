@@ -47,7 +47,7 @@ export function SiteFooter() {
           <Link href="/blog" className="hover:text-ink-dim">Blog</Link>
           <Link href="/contactos" className="hover:text-ink-dim">Contactos</Link>
         </nav>
-        <div>Porto e Braga · © {new Date().getFullYear()} F. Cardoso Automóveis. Todos os direitos reservados.</div>
+        <div>Elvas · © {new Date().getFullYear()} F. Cardoso Automóveis. Todos os direitos reservados.</div>
       </div>
     </footer>
   );

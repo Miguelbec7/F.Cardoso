@@ -23,7 +23,7 @@ equipamento:
     - PASM
 descricao: Vendido em maio de 2026.
 garantia: 12 meses de garantia mecânica
-localizacao: Porto
+localizacao: Elvas
 criadoEm: 2025-12-05
 fotos: []
 video: ""
