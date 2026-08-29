@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { Car } from "@/lib/car-utils";
 import { formatPrice, whatsappLink } from "@/lib/car-utils";
-import Image from "next/image";
 import { CarSilhouette, WhatsAppIcon } from "./icons";
+import { BrandWatermark } from "./BrandMark";
 
 export function Hero({
   cars,
@@ -37,7 +37,7 @@ export function Hero({
   const car = cars[index];
 
   const reveal = (delayMs: number) =>
-    `transition-all duration-700 ease-out ${revealed ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}` +
+    `transition-all duration-1000 ease-out ${revealed ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}` +
     ` [transition-delay:${delayMs}ms]`;
 
   return (
@@ -73,29 +73,23 @@ export function Hero({
 
       {/* Texto — coluna própria à esquerda */}
       <div className="relative z-10 flex flex-1 flex-col justify-center overflow-hidden px-5 py-10 md:px-12 md:py-16 lg:px-16">
-        <Image
-          src="/brand/logo-lockup.png"
-          alt="F. Cardoso Automóveis"
-          width={756}
-          height={457}
-          className="absolute top-8 left-10 hidden w-56 select-none md:block lg:left-14"
-        />
+        <BrandWatermark className="pointer-events-none absolute top-6 left-4 h-40 w-40 text-white opacity-[0.12] select-none md:top-8 md:left-10 md:h-64 md:w-64 lg:left-14" />
 
         <span className={`text-[0.72rem] font-bold tracking-[0.16em] text-brand-glow uppercase ${reveal(0)}`}>
           Compra · Venda · Intermediação
         </span>
         <h1
-          className={`mt-2 max-w-[19ch] text-[clamp(2rem,5.4vw,3.1rem)] leading-[1.08] font-extrabold tracking-tight text-balance text-white ${reveal(90)}`}
+          className={`mt-2 max-w-[19ch] text-[clamp(2rem,5.4vw,3.1rem)] leading-[1.08] font-extrabold tracking-tight text-balance text-white ${reveal(120)}`}
         >
           Comprar um carro usado devia ser simples assim.
         </h1>
-        <p className={`mt-3.5 max-w-[46ch] text-[1.02rem] text-white/70 ${reveal(180)}`}>
+        <p className={`mt-3.5 max-w-[46ch] text-[1.02rem] text-white/70 ${reveal(260)}`}>
           Viaturas selecionadas, verificadas e prontas a conduzir — com o acompanhamento de uma equipa que trata
           cada venda como se fosse a sua.
         </p>
 
         {car && (
-          <div className={`mt-5 flex flex-wrap items-baseline gap-3 ${reveal(260)}`}>
+          <div className={`mt-5 flex flex-wrap items-baseline gap-3 ${reveal(390)}`}>
             <span className="text-sm font-bold text-white">
               {car.marca} {car.modelo} {car.versao} — {car.ano}
             </span>
@@ -103,7 +97,7 @@ export function Hero({
           </div>
         )}
 
-        <div className={`mt-7 flex flex-wrap gap-2.5 ${reveal(340)}`}>
+        <div className={`mt-7 flex flex-wrap gap-2.5 ${reveal(520)}`}>
           <Link href="/carros" className="rounded-full bg-white px-5 py-3 text-[0.85rem] font-bold text-brand transition hover:bg-canvas-soft active:scale-95">
             Ver automóveis
           </Link>
@@ -125,7 +119,7 @@ export function Hero({
         </div>
 
         {cars.length > 1 && (
-          <div className={`mt-6 flex gap-2 ${reveal(420)}`}>
+          <div className={`mt-6 flex gap-2 ${reveal(650)}`}>
             {cars.map((c, i) => (
               <button
                 key={c.slug}
