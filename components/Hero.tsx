@@ -19,6 +19,7 @@ export function Hero({
   videoPoster?: string;
 }) {
   const [index, setIndex] = useState(0);
+  const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
     if (cars.length < 2) return;
@@ -28,7 +29,16 @@ export function Hero({
     return () => clearInterval(id);
   }, [cars.length]);
 
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setRevealed(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
+
   const car = cars[index];
+
+  const reveal = (delayMs: number) =>
+    `transition-all duration-700 ease-out ${revealed ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"}` +
+    ` [transition-delay:${delayMs}ms]`;
 
   return (
     <section className="relative flex flex-col bg-midnight md:min-h-[90vh] md:flex-row-reverse">
@@ -65,19 +75,21 @@ export function Hero({
       <div className="relative z-10 flex flex-1 flex-col justify-center overflow-hidden px-5 py-10 md:px-12 md:py-16 lg:px-16">
         <BrandWatermark className="pointer-events-none absolute top-6 left-4 h-40 w-40 text-white opacity-[0.12] select-none md:top-8 md:left-10 md:h-64 md:w-64 lg:left-14" />
 
-        <span className="text-[0.72rem] font-bold tracking-[0.16em] text-brand-glow uppercase">
+        <span className={`text-[0.72rem] font-bold tracking-[0.16em] text-brand-glow uppercase ${reveal(0)}`}>
           Compra · Venda · Intermediação
         </span>
-        <h1 className="mt-2 max-w-[13ch] text-[clamp(2.1rem,6vw,3.4rem)] leading-[1.04] font-extrabold tracking-tight text-balance text-white">
+        <h1
+          className={`mt-2 max-w-[13ch] text-[clamp(2.1rem,6vw,3.4rem)] leading-[1.04] font-extrabold tracking-tight text-balance text-white ${reveal(90)}`}
+        >
           Encontre o carro certo para si.
         </h1>
-        <p className="mt-3.5 max-w-[46ch] text-[1.02rem] text-white/70">
+        <p className={`mt-3.5 max-w-[46ch] text-[1.02rem] text-white/70 ${reveal(180)}`}>
           Viaturas selecionadas, verificadas e prontas a conduzir — com o acompanhamento de uma equipa que trata
           cada venda como se fosse a sua.
         </p>
 
         {car && (
-          <div className="mt-5 flex flex-wrap items-baseline gap-3">
+          <div className={`mt-5 flex flex-wrap items-baseline gap-3 ${reveal(260)}`}>
             <span className="text-sm font-bold text-white">
               {car.marca} {car.modelo} {car.versao} — {car.ano}
             </span>
@@ -85,7 +97,7 @@ export function Hero({
           </div>
         )}
 
-        <div className="mt-7 flex flex-wrap gap-2.5">
+        <div className={`mt-7 flex flex-wrap gap-2.5 ${reveal(340)}`}>
           <Link href="/carros" className="rounded-full bg-white px-5 py-3 text-[0.85rem] font-bold text-brand transition hover:bg-canvas-soft active:scale-95">
             Ver automóveis
           </Link>
@@ -107,7 +119,7 @@ export function Hero({
         </div>
 
         {cars.length > 1 && (
-          <div className="mt-6 flex gap-2">
+          <div className={`mt-6 flex gap-2 ${reveal(420)}`}>
             {cars.map((c, i) => (
               <button
                 key={c.slug}
