@@ -3,6 +3,8 @@
   "telefone": "+351 969 547 461",
   "heroVideo": "/uploads/hero/hero-loop-1.mp4",
   "heroVideoPoster": "/uploads/hero/hero-loop-1-poster.jpg",
+  "videoStrip": "/uploads/hero/badge-loop.mp4",
+  "videoStripPoster": "/uploads/hero/badge-loop-poster.jpg",
   "stats": {
     "viaturasVendidas": "500+",
     "clientesSatisfeitos": "98%",

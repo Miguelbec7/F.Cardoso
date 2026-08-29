@@ -6,6 +6,7 @@ import { SectionHead } from "@/components/SectionHead";
 import { CarRow } from "@/components/CarRow";
 import { CarOfWeek } from "@/components/CarOfWeek";
 import { Testimonials } from "@/components/Testimonials";
+import { VideoStrip } from "@/components/VideoStrip";
 import { getFeaturedCars, getSoldCars, getCarOfTheWeek, getBrands } from "@/lib/cars";
 import { getSiteSettings } from "@/lib/settings";
 
@@ -15,7 +16,7 @@ export default function HomePage() {
   const carOfWeek = getCarOfTheWeek();
   const heroCars = featured.slice(0, 3);
   const brands = getBrands();
-  const { whatsappNumber, stats, heroVideo, heroVideoPoster } = getSiteSettings();
+  const { whatsappNumber, stats, heroVideo, heroVideoPoster, videoStrip, videoStripPoster } = getSiteSettings();
 
   return (
     <main>
@@ -41,6 +42,8 @@ export default function HomePage() {
           <SectionHead eyebrow="Prova social" title="Recentemente vendidos" />
           <CarRow cars={sold} />
         </section>
+
+        <VideoStrip src={videoStrip} poster={videoStripPoster} />
 
         <section>
           <SectionHead eyebrow="Clientes reais. Experiências reais." title="O que dizem os nossos clientes" />

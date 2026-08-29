@@ -288,6 +288,13 @@ collections:
           - { label: Telefone (para exibir), name: telefone, widget: string }
           - { label: Vídeo de fundo do Hero, name: heroVideo, widget: file, required: false }
           - { label: Poster do vídeo do Hero (frame estático), name: heroVideoPoster, widget: image, required: false }
+          - {
+              label: "Vídeo intermédio (tira de destaque a meio da homepage)",
+              name: videoStrip,
+              widget: file,
+              required: false,
+            }
+          - { label: Poster do vídeo intermédio, name: videoStripPoster, widget: image, required: false }
           - label: Estatísticas
             name: stats
             widget: object

@@ -6,6 +6,8 @@ export type SiteSettings = {
   telefone: string;
   heroVideo?: string;
   heroVideoPoster?: string;
+  videoStrip?: string;
+  videoStripPoster?: string;
   stats: {
     viaturasVendidas: string;
     clientesSatisfeitos: string;
