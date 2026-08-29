@@ -30,7 +30,7 @@ export const EQUIPAMENTO_LABELS: Record<keyof Equipamento, string> = {
   vidros: "Vidros",
   bancos: "Bancos",
   volante: "Volante",
-  multimedia: "Multimédia & Tecnologia",
+  multimedia: "Conforto & Multimédia",
   seguranca: "Segurança & Desempenho",
   outros: "Outros",
 };
