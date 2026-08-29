@@ -1,0 +1,111 @@
+backend:
+  name: github
+  repo: Miguelbec7/F.Cardoso
+  branch: claude/fcardoso-auto-website-sgw200
+  # Trocar "base_url" pelo endereço do Cloudflare Worker (OAuth proxy) depois de o publicar —
+  # ver /cms-oauth-worker/README.md. Sem isto o login do backoffice não funciona.
+  base_url: https://SUBSTITUIR-PELO-WORKER.workers.dev
+  auth_endpoint: auth
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: carros
+    label: Automóveis
+    label_singular: Automóvel
+    folder: content/carros
+    create: true
+    slug: "{{fields.marca}}-{{fields.modelo}}-{{fields.versao}}-{{fields.ano}}"
+    summary: "{{marca}} {{modelo}} — {{ano}} — {{preco}} €"
+    sortable_fields: ["criadoEm", "preco", "ano"]
+    fields:
+      - { label: Marca, name: marca, widget: string }
+      - { label: Modelo, name: modelo, widget: string }
+      - { label: Versão, name: versao, widget: string }
+      - { label: Ano, name: ano, widget: number, value_type: int }
+      - { label: Quilómetros, name: km, widget: number, value_type: int }
+      - label: Combustível
+        name: combustivel
+        widget: select
+        options: [Gasolina, Diesel, Híbrido, Elétrico]
+      - label: Caixa
+        name: caixa
+        widget: select
+        options: [Manual, Automática]
+      - label: Carroçaria
+        name: carroceria
+        widget: select
+        options: [Berlina, Break, SUV, Hatchback, Coupé, Comercial]
+      - { label: Cilindrada, name: cilindrada, widget: string, required: false }
+      - { label: Potência (cv), name: potencia, widget: number, value_type: int }
+      - { label: Cor, name: cor, widget: string, required: false }
+      - { label: Preço (€), name: preco, widget: number, value_type: int }
+      - { label: Preço anterior (€), name: precoAnterior, widget: number, value_type: int, required: false }
+      - label: Estado
+        name: estado
+        widget: select
+        options:
+          - { label: Disponível, value: disponivel }
+          - { label: Reservado, value: reservado }
+          - { label: Vendido, value: vendido }
+        default: disponivel
+      - { label: "Em destaque?", name: destaque, widget: boolean, default: false }
+      - { label: "É o carro da semana?", name: carroDaSemana, widget: boolean, default: false }
+      - { label: "Marcar como recém-chegado?", name: recemChegado, widget: boolean, default: false }
+      - label: Equipamento
+        name: equipamento
+        widget: list
+        field: { label: Item, name: item, widget: string }
+        required: false
+      - { label: Descrição, name: descricao, widget: text }
+      - { label: Garantia, name: garantia, widget: string, default: "12 meses de garantia mecânica" }
+      - { label: Localização, name: localizacao, widget: string }
+      - { label: Data de publicação, name: criadoEm, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - label: Fotografias
+        name: fotos
+        widget: list
+        field: { label: Foto, name: image, widget: image }
+        required: false
+      - { label: Vídeo (opcional), name: video, widget: file, required: false }
+
+  - name: testemunhos
+    label: Testemunhos
+    folder: content/testemunhos
+    create: true
+    slug: "{{fields.nome}}"
+    summary: "{{nome}} — {{carro}}"
+    fields:
+      - { label: Nome do cliente, name: nome, widget: string }
+      - { label: Estrelas (1-5), name: estrelas, widget: number, value_type: int, min: 1, max: 5, default: 5 }
+      - { label: Automóvel comprado, name: carro, widget: string }
+      - { label: Data, name: data, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: Texto da avaliação, name: texto, widget: text }
+      - { label: Foto do cliente (opcional), name: foto, widget: image, required: false }
+
+  - name: settings
+    label: Definições do site
+    files:
+      - name: site
+        label: Geral
+        file: content/settings/site.json
+        fields:
+          - { label: Número de WhatsApp (só dígitos, com indicativo 351), name: whatsappNumber, widget: string }
+          - { label: Telefone (para exibir), name: telefone, widget: string }
+          - label: Estatísticas
+            name: stats
+            widget: object
+            fields:
+              - { label: Viaturas vendidas, name: viaturasVendidas, widget: string }
+              - { label: Clientes satisfeitos, name: clientesSatisfeitos, widget: string }
+              - { label: Anos de experiência, name: anosExperiencia, widget: string }
+          - label: Avaliação Google
+            name: googleReviews
+            widget: object
+            fields:
+              - { label: Média (0 a 5), name: media, widget: number, value_type: float }
+              - { label: Nº de reviews, name: total, widget: number, value_type: int }
+          - label: Marcas em destaque (faixa da homepage)
+            name: marcas
+            widget: list
+            field: { label: Marca, name: marca, widget: string }

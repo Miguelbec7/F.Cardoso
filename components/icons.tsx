@@ -23,6 +23,17 @@ export function CalendarIcon({ className }: { className?: string }) {
   );
 }
 
+export function GoogleGIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 48 48" aria-hidden="true">
+      <path fill="#4285F4" d="M45.1 24.5c0-1.6-.1-3.1-.4-4.6H24v8.7h11.9c-.5 2.8-2.1 5.2-4.4 6.8v5.6h7.2c4.2-3.9 6.4-9.6 6.4-16.5Z" />
+      <path fill="#34A853" d="M24 46c6 0 11-2 14.7-5.4l-7.2-5.6c-2 1.3-4.6 2.1-7.5 2.1-5.8 0-10.7-3.9-12.4-9.2H4.2v5.8C7.9 41.1 15.4 46 24 46Z" />
+      <path fill="#FBBC05" d="M11.6 27.9a13.9 13.9 0 0 1 0-8.9v-5.8H4.2a22 22 0 0 0 0 20.5l7.4-5.8Z" />
+      <path fill="#EA4335" d="M24 10.9c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.3 30 2 24 2 15.4 2 7.9 6.9 4.2 14.1l7.4 5.8c1.7-5.3 6.6-9.2 12.4-9.2Z" />
+    </svg>
+  );
+}
+
 export function CarSilhouette({ className, stroke = "#8d93a0" }: { className?: string; stroke?: string }) {
   return (
     <svg className={className} viewBox="0 0 200 100" fill="none" aria-hidden="true">

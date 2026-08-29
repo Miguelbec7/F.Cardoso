@@ -1,4 +1,4 @@
-import type { Car } from "@/lib/cars";
+import type { Car } from "@/lib/car-utils";
 import { CarCard } from "./CarCard";
 
 export function CarRow({ cars }: { cars: Car[] }) {

@@ -1,29 +1,29 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { Car } from "@/lib/cars";
+import type { Car } from "@/lib/car-utils";
 import { CarCard } from "./CarCard";
 
 const ALL = "Todos";
 
-export function CarStock({ cars }: { cars: Car[] }) {
-  const [marca, setMarca] = useState(ALL);
+export function CarStock({ cars, initialMarca }: { cars: Car[]; initialMarca?: string }) {
+  const [marca, setMarca] = useState(initialMarca || ALL);
   const [combustivel, setCombustivel] = useState(ALL);
   const [caixa, setCaixa] = useState(ALL);
-  const [carroçaria, setCarroçaria] = useState(ALL);
+  const [carroceria, setCarroceria] = useState(ALL);
   const [precoMax, setPrecoMax] = useState(ALL);
 
   const marcas = useMemo(() => [ALL, ...new Set(cars.map((c) => c.marca))].sort(), [cars]);
   const combustiveis = useMemo(() => [ALL, ...new Set(cars.map((c) => c.combustivel))], [cars]);
   const caixas = useMemo(() => [ALL, ...new Set(cars.map((c) => c.caixa))], [cars]);
-  const carroçarias = useMemo(() => [ALL, ...new Set(cars.map((c) => c.carroçaria))], [cars]);
+  const carrocerias = useMemo(() => [ALL, ...new Set(cars.map((c) => c.carroceria))], [cars]);
   const faixasPreco = ["Todos", "Até 25 000 €", "Até 35 000 €", "Até 50 000 €", "Mais de 50 000 €"];
 
   const filtered = cars.filter((c) => {
     if (marca !== ALL && c.marca !== marca) return false;
     if (combustivel !== ALL && c.combustivel !== combustivel) return false;
     if (caixa !== ALL && c.caixa !== caixa) return false;
-    if (carroçaria !== ALL && c.carroçaria !== carroçaria) return false;
+    if (carroceria !== ALL && c.carroceria !== carroceria) return false;
     if (precoMax === "Até 25 000 €" && c.preco > 25000) return false;
     if (precoMax === "Até 35 000 €" && c.preco > 35000) return false;
     if (precoMax === "Até 50 000 €" && c.preco > 50000) return false;
@@ -42,8 +42,8 @@ export function CarStock({ cars }: { cars: Car[] }) {
             <option key={m}>{m}</option>
           ))}
         </select>
-        <select className={selectClass} value={carroçaria} onChange={(e) => setCarroçaria(e.target.value)} aria-label="Carroçaria">
-          {carroçarias.map((m) => (
+        <select className={selectClass} value={carroceria} onChange={(e) => setCarroceria(e.target.value)} aria-label="Carroçaria">
+          {carrocerias.map((m) => (
             <option key={m}>{m}</option>
           ))}
         </select>

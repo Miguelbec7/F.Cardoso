@@ -1,0 +1,27 @@
+---
+marca: Mercedes-Benz
+modelo: Classe A
+versao: A180
+ano: 2020
+km: 54300
+combustivel: Gasolina
+caixa: Automática
+carroceria: Hatchback
+cilindrada: 1332 cc
+potencia: 136
+cor: Cinzento Montanha
+preco: 21900
+estado: vendido
+destaque: false
+carroDaSemana: false
+recemChegado: false
+equipamento:
+  - MBUX
+  - Faróis LED
+descricao: Vendido em julho de 2026.
+garantia: 12 meses de garantia mecânica
+localizacao: Braga
+criadoEm: 2026-02-11
+fotos: []
+video: ""
+---

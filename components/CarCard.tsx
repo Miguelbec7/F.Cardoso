@@ -1,36 +1,38 @@
 import Link from "next/link";
-import type { Car } from "@/lib/cars";
-import { formatKm, formatPrice } from "@/lib/cars";
+import Image from "next/image";
+import type { Car } from "@/lib/car-utils";
+import { formatKm, formatPrice, isCarNew } from "@/lib/car-utils";
 import { CarSilhouette } from "./icons";
-
-function daysAgo(dateStr: string) {
-  return (Date.now() - new Date(dateStr).getTime()) / 86_400_000;
-}
 
 export function CarCard({ car }: { car: Car }) {
   const isSold = car.estado === "vendido";
-  const isNew = !isSold && (car.recemChegado || daysAgo(car.criadoEm) < 21);
+  const isNew = isCarNew(car);
   const hasPriceDrop = !isSold && !!car.precoAnterior && car.precoAnterior > car.preco;
+  const cover = car.fotos[0];
 
   return (
-    <article className="h-full w-full overflow-hidden rounded-card border border-line bg-surface transition hover:-translate-y-0.5 hover:border-surface-2">
-      <div className={`relative flex aspect-[4/3] items-center justify-center bg-linear-to-br from-surface-2 to-canvas-soft ${isSold ? "grayscale-[0.4] brightness-75" : ""}`}>
+    <article className="h-full w-full overflow-hidden rounded-card border border-line bg-surface transition hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(20,24,34,0.08)]">
+      <div className={`relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-linear-to-br from-surface-2 to-canvas-soft ${isSold ? "grayscale-[0.5] brightness-90" : ""}`}>
         {isNew && (
-          <span className="absolute top-2.5 left-2.5 rounded-full border border-brand-bright/40 bg-canvas/75 px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-brand-bright uppercase">
+          <span className="absolute top-2.5 left-2.5 rounded-full border border-brand-bright/30 bg-white/90 px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-brand-bright uppercase">
             {car.recemChegado ? "Recém-chegado" : "Novo"}
           </span>
         )}
         {isSold && (
-          <span className="absolute top-2.5 left-2.5 rounded-full border border-gold/40 bg-canvas/75 px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-gold uppercase">
+          <span className="absolute top-2.5 left-2.5 rounded-full bg-ink px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-white uppercase">
             Vendido
           </span>
         )}
         {hasPriceDrop && (
-          <span className="absolute top-2.5 right-2.5 rounded-full border border-[#7fd99a]/40 bg-canvas/75 px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-[#7fd99a] uppercase">
+          <span className="absolute top-2.5 right-2.5 rounded-full border border-[#1a9c5b]/30 bg-white/90 px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-[#1a9c5b] uppercase">
             Preço reduzido
           </span>
         )}
-        <CarSilhouette className="w-3/5 opacity-55" />
+        {cover ? (
+          <Image src={cover} alt={`${car.marca} ${car.modelo}`} fill className="object-cover" />
+        ) : (
+          <CarSilhouette className="w-3/5 opacity-40" stroke="#9aa0ac" />
+        )}
       </div>
 
       <div className={`p-4 ${isSold ? "opacity-75" : ""}`}>
@@ -38,7 +40,7 @@ export function CarCard({ car }: { car: Car }) {
           {car.marca} {car.modelo}
         </div>
         <div className="mt-0.5 text-[0.8rem] text-muted">
-          {car.ano} · {car.carroçaria}
+          {car.ano} · {car.carroceria}
         </div>
 
         {!isSold && (

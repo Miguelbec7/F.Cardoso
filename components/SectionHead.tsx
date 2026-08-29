@@ -14,7 +14,7 @@ export function SectionHead({
   return (
     <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
       <div>
-        <span className="text-[0.72rem] font-bold tracking-[0.16em] text-gold uppercase">{eyebrow}</span>
+        <span className="text-[0.72rem] font-bold tracking-[0.16em] text-brand-bright uppercase">{eyebrow}</span>
         <h2 className="mt-2 text-[clamp(1.5rem,4vw,2rem)] font-extrabold tracking-tight text-balance">{title}</h2>
       </div>
       {linkHref && linkLabel && (

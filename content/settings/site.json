@@ -1,0 +1,14 @@
+{
+  "whatsappNumber": "351900000000",
+  "telefone": "+351 900 000 000",
+  "stats": {
+    "viaturasVendidas": "500+",
+    "clientesSatisfeitos": "98%",
+    "anosExperiencia": "15"
+  },
+  "googleReviews": {
+    "media": 5.0,
+    "total": 19
+  },
+  "marcas": ["BMW", "Mercedes-Benz", "Audi", "Volkswagen", "Porsche"]
+}

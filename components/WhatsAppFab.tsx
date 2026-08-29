@@ -1,10 +1,12 @@
 import { whatsappLink } from "@/lib/cars";
+import { getSiteSettings } from "@/lib/settings";
 import { WhatsAppIcon } from "./icons";
 
 export function WhatsAppFab() {
+  const { whatsappNumber } = getSiteSettings();
   return (
     <a
-      href={whatsappLink("Olá, gostaria de saber mais sobre os vossos automóveis.")}
+      href={whatsappLink("Olá, gostaria de saber mais sobre os vossos automóveis.", whatsappNumber)}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"

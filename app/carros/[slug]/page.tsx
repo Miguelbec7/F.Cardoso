@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   cars,
@@ -10,6 +11,7 @@ import {
   whatsappLink,
   carInterestMessage,
 } from "@/lib/cars";
+import { getSiteSettings } from "@/lib/settings";
 import { CarSilhouette, WhatsAppIcon } from "@/components/icons";
 import { CarRow } from "@/components/CarRow";
 
@@ -40,8 +42,10 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
   const car = getCarBySlug(slug);
   if (!car) notFound();
 
+  const { whatsappNumber } = getSiteSettings();
   const isSold = car.estado === "vendido";
   const similar = getSimilarCars(car);
+  const [cover, ...thumbs] = car.fotos;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -75,18 +79,26 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
 
       <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr]">
         <div>
-          <div className="relative flex aspect-[4/3] items-center justify-center rounded-card border border-line bg-linear-to-br from-surface-2 to-canvas-soft">
+          <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-card border border-line bg-linear-to-br from-surface-2 to-canvas-soft">
             {isSold && (
-              <span className="absolute top-3 left-3 rounded-full border border-gold/40 bg-canvas/75 px-3 py-1.5 text-[0.68rem] font-extrabold tracking-wide text-gold uppercase">
+              <span className="absolute top-3 left-3 rounded-full bg-ink px-3 py-1.5 text-[0.68rem] font-extrabold tracking-wide text-white uppercase">
                 Vendido
               </span>
             )}
-            <CarSilhouette className="w-2/3 opacity-55" />
+            {cover ? (
+              <Image src={cover} alt={`${car.marca} ${car.modelo}`} fill className="object-cover" priority />
+            ) : (
+              <CarSilhouette className="w-2/3 opacity-40" stroke="#9aa0ac" />
+            )}
           </div>
           <div className="mt-3 grid grid-cols-4 gap-3">
             {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="flex aspect-square items-center justify-center rounded-lg border border-line bg-surface">
-                <CarSilhouette className="w-2/3 opacity-30" />
+              <div key={i} className="relative flex aspect-square items-center justify-center overflow-hidden rounded-lg border border-line bg-surface">
+                {thumbs[i] ? (
+                  <Image src={thumbs[i]} alt="" fill className="object-cover" />
+                ) : (
+                  <CarSilhouette className="w-2/3 opacity-25" stroke="#9aa0ac" />
+                )}
               </div>
             ))}
           </div>
@@ -107,7 +119,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
         </div>
 
         <div>
-          <span className="text-[0.72rem] font-bold tracking-[0.16em] text-gold uppercase">
+          <span className="text-[0.72rem] font-bold tracking-[0.16em] text-brand-bright uppercase">
             {car.marca}
           </span>
           <h1 className="mt-1 text-2xl font-extrabold tracking-tight text-balance">
@@ -127,7 +139,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
               ["Cilindrada", car.cilindrada],
               ["Potência", `${car.potencia} cv`],
               ["Cor", car.cor],
-              ["Carroçaria", car.carroçaria],
+              ["Carroçaria", car.carroceria],
               ["Garantia", car.garantia],
               ["Localização", car.localizacao],
             ].map(([label, value]) => (
@@ -141,7 +153,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
           {!isSold ? (
             <div className="mt-7 flex flex-col gap-2.5">
               <a
-                href={whatsappLink(carInterestMessage(car))}
+                href={whatsappLink(carInterestMessage(car), whatsappNumber)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 rounded-full bg-whatsapp px-5 py-3.5 text-[0.9rem] font-bold text-[#06210f] transition hover:brightness-105"
@@ -150,7 +162,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
                 Falar no WhatsApp
               </a>
               <div className="grid grid-cols-2 gap-2.5">
-                <button className="rounded-full bg-ink px-4 py-3 text-[0.82rem] font-bold text-canvas transition hover:bg-white">
+                <button className="rounded-full bg-ink px-4 py-3 text-[0.82rem] font-bold text-canvas transition hover:bg-brand">
                   Tenho interesse
                 </button>
                 <Link

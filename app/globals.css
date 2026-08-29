@@ -1,19 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #0a0c10;
-  --color-canvas-soft: #0d0f14;
-  --color-surface: #151a22;
-  --color-surface-2: #1e2530;
-  --color-line: #262e3a;
-  --color-ink: #f2efe9;
-  --color-ink-dim: #c7cbd4;
-  --color-muted: #8d93a0;
-  --color-brand: #2f5aa8;
-  --color-brand-bright: #5b8ae0;
-  --color-gold: #c6a15b;
-  --color-gold-dim: #8a7442;
+  /* Corpo do site — claro, premium, alinhado com o azul/cinzento do logótipo real */
+  --color-canvas: #ffffff;
+  --color-canvas-soft: #f4f6fa;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef1f6;
+  --color-line: #e1e5ec;
+  --color-ink: #12151d;
+  --color-ink-dim: #4a4f5c;
+  --color-muted: #767c8c;
+  --color-brand: #17265c;
+  --color-brand-bright: #2a4bb0;
+  --color-brand-glow: #7fa0ea;
+  --color-steel: #9aa0ac;
+  --color-steel-dark: #33363d;
+  --color-star: #f5b400;
   --color-whatsapp: #25d366;
+
+  /* Reservado à secção de Hero, que fica escura/cinematográfica mesmo com o resto do site claro */
+  --color-midnight: #0a0c10;
+  --color-midnight-soft: #0d0f14;
 
   --font-sans: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-display: "Helvetica Neue", Arial, sans-serif;
