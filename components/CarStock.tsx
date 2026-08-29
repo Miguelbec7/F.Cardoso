@@ -1,13 +1,15 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import type { Car } from "@/lib/car-utils";
 import { CarCard } from "./CarCard";
 
 const ALL = "Todos";
 
-export function CarStock({ cars, initialMarca }: { cars: Car[]; initialMarca?: string }) {
-  const [marca, setMarca] = useState(initialMarca || ALL);
+export function CarStock({ cars }: { cars: Car[] }) {
+  const searchParams = useSearchParams();
+  const [marca, setMarca] = useState(searchParams.get("marca") || ALL);
   const [combustivel, setCombustivel] = useState(ALL);
   const [caixa, setCaixa] = useState(ALL);
   const [carroceria, setCarroceria] = useState(ALL);

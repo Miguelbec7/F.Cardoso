@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { CarStock } from "@/components/CarStock";
 import { getAvailableCars } from "@/lib/cars";
 
@@ -7,12 +8,7 @@ export const metadata: Metadata = {
   description: "Consulte o stock de automóveis selecionados e verificados da F. Cardoso Automóveis, com filtros por marca, preço, ano e mais.",
 };
 
-export default async function CarrosPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ marca?: string }>;
-}) {
-  const { marca } = await searchParams;
+export default function CarrosPage() {
   const cars = getAvailableCars();
 
   return (
@@ -27,7 +23,9 @@ export default async function CarrosPage({
       </p>
 
       <div className="mt-8">
-        <CarStock cars={cars} initialMarca={marca} />
+        <Suspense fallback={null}>
+          <CarStock cars={cars} />
+        </Suspense>
       </div>
     </main>
   );
