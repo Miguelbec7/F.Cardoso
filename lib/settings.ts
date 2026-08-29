@@ -16,6 +16,10 @@ export type SiteSettings = {
     total: number;
   };
   marcas: string[];
+  redesSociais?: {
+    facebook?: string;
+    instagram?: string;
+  };
 };
 
 export function getSiteSettings(): SiteSettings {

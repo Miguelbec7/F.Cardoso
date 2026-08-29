@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { whatsappLink } from "@/lib/cars";
 import { getSiteSettings } from "@/lib/settings";
-import { WhatsAppIcon } from "./icons";
+import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "./icons";
 import { BrandLockup } from "./BrandMark";
 
 const navLinks = [
@@ -13,7 +13,7 @@ const navLinks = [
 ];
 
 export function SiteHeader() {
-  const { whatsappNumber } = getSiteSettings();
+  const { whatsappNumber, redesSociais } = getSiteSettings();
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-canvas/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
@@ -30,6 +30,28 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2.5 md:flex">
+          {redesSociais?.facebook && (
+            <a
+              href={redesSociais.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink-dim transition hover:border-ink-dim hover:text-ink"
+            >
+              <FacebookIcon className="h-4 w-4" />
+            </a>
+          )}
+          {redesSociais?.instagram && (
+            <a
+              href={redesSociais.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-line text-ink-dim transition hover:border-ink-dim hover:text-ink"
+            >
+              <InstagramIcon className="h-4 w-4" />
+            </a>
+          )}
           <Link
             href="/carros"
             className="rounded-full border border-line px-5 py-2.5 text-[0.85rem] font-bold transition hover:border-ink-dim"

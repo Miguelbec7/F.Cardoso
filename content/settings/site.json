@@ -12,5 +12,9 @@
     "media": 5.0,
     "total": 19
   },
-  "marcas": ["BMW", "Mercedes-Benz", "Audi", "Volkswagen", "Porsche"]
+  "marcas": ["BMW", "Mercedes-Benz", "Audi", "Volkswagen", "Porsche"],
+  "redesSociais": {
+    "facebook": "",
+    "instagram": ""
+  }
 }

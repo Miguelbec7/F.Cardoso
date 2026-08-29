@@ -295,3 +295,10 @@ collections:
             name: marcas
             widget: list
             field: { label: Marca, name: marca, widget: string }
+          - label: Redes sociais
+            name: redesSociais
+            widget: object
+            required: false
+            fields:
+              - { label: "Facebook (URL completo)", name: facebook, widget: string, required: false }
+              - { label: "Instagram (URL completo)", name: instagram, widget: string, required: false }
