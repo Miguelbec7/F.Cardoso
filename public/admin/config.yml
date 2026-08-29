@@ -2,9 +2,7 @@ backend:
   name: github
   repo: Miguelbec7/F.Cardoso
   branch: claude/fcardoso-auto-website-sgw200
-  # Trocar "base_url" pelo endereço do Cloudflare Worker (OAuth proxy) depois de o publicar —
-  # ver /cms-oauth-worker/README.md. Sem isto o login do backoffice não funciona.
-  base_url: https://SUBSTITUIR-PELO-WORKER.workers.dev
+  base_url: https://fcardoso-cms-auth.miguelbec97.workers.dev
   auth_endpoint: auth
 
 media_folder: "public/uploads"
