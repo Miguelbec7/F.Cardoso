@@ -38,11 +38,13 @@ export async function generateMetadata({
   ]
     .filter(Boolean)
     .join(", ") + `. ${formatPrice(car.preco)}.`;
+  const image = car.fotos[0] || "/og-image.png";
   return {
     title,
     description,
     alternates: { canonical: `/carros/${car.slug}` },
-    openGraph: { title, description },
+    openGraph: { title, description, images: [{ url: image }] },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
   };
 }
 

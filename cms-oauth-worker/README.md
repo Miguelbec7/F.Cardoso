@@ -40,6 +40,20 @@ Worker (para saber o endereço dele), só depois a GitHub OAuth App.
    - `GITHUB_CLIENT_SECRET` → cola o Client Secret do passo 2
 3. Guarda (pode pedir para fazer redeploy — aceita)
 
+## 4b. (Só quando tiverem um domínio próprio) Restringir a origem do token
+
+Por omissão, o Worker só entrega o login a endereços `*.pages.dev` (o domínio
+de testes do Cloudflare Pages). Quando o site passar a viver num domínio
+próprio (ex.: `fcardoso.pt`), adiciona mais uma variável — desta vez do tipo
+**Variable** normal, não Secret (não é informação sensível):
+
+- `ALLOWED_ORIGIN` → `https://fcardoso.pt` (ou vários, separados por vírgula,
+  se o `/admin` também continuar acessível pelo domínio antigo)
+
+Sem este passo o login simplesmente deixa de funcionar assim que o `/admin`
+só for acedido pelo domínio novo — não é um problema de segurança, só falta
+de configuração.
+
 ## 5. Ligar tudo no site
 
 Em `public/admin/config.yml`, troca:
