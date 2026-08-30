@@ -44,7 +44,6 @@ export function SiteFooter() {
           <Link href="/retomas" className="hover:text-ink-dim">Retomas</Link>
           <Link href="/financiamento" className="hover:text-ink-dim">Financiamento</Link>
           <Link href="/sobre" className="hover:text-ink-dim">Sobre</Link>
-          <Link href="/blog" className="hover:text-ink-dim">Blog</Link>
           <Link href="/contactos" className="hover:text-ink-dim">Contactos</Link>
         </nav>
         <div>Elvas · © {new Date().getFullYear()} F. Cardoso Automóveis. Todos os direitos reservados.</div>
