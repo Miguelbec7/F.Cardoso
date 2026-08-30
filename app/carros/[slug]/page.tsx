@@ -158,9 +158,14 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
                 Falar no WhatsApp
               </a>
               <div className="grid grid-cols-2 gap-2.5">
-                <button className="rounded-full bg-ink px-4 py-3 text-[0.82rem] font-bold text-canvas transition hover:bg-brand">
+                <a
+                  href={whatsappLink(carInterestMessage(car), whatsappNumber)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center rounded-full bg-ink px-4 py-3 text-center text-[0.82rem] font-bold text-canvas transition hover:bg-brand"
+                >
                   Tenho interesse
-                </button>
+                </a>
                 <Link
                   href="/contactos#marcar-visita"
                   className="flex items-center justify-center rounded-full border border-line px-4 py-3 text-center text-[0.82rem] font-bold transition hover:border-ink-dim"

@@ -8,13 +8,16 @@ export function CarOfWeek({ car, whatsappNumber }: { car: Car; whatsappNumber: s
   const cover = car.fotos[0];
   return (
     <div className="grid gap-6 rounded-[20px] border border-line bg-linear-to-br from-surface to-canvas-soft p-6 md:grid-cols-[1.1fr_1fr] md:items-center md:p-10">
-      <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl border border-line bg-[radial-gradient(120%_100%_at_30%_20%,#dbe4f7_0%,#eef1f6_70%)]">
+      <Link
+        href={`/carros/${car.slug}`}
+        className="relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl border border-line bg-[radial-gradient(120%_100%_at_30%_20%,#dbe4f7_0%,#eef1f6_70%)]"
+      >
         {cover ? (
           <Image src={cover} alt={`${car.marca} ${car.modelo}`} fill className="object-cover" />
         ) : (
           <CarSilhouette className="w-2/3 opacity-45" stroke="#7fa0ea" />
         )}
-      </div>
+      </Link>
       <div>
         <div className="mb-3.5 flex flex-wrap gap-2">
           <span className="rounded-full border border-line px-2.5 py-1.5 text-[0.68rem] font-bold tracking-wide text-ink-dim uppercase">

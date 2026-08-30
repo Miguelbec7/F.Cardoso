@@ -11,7 +11,10 @@ export function CarCard({ car }: { car: Car }) {
   const cover = car.fotos[0];
 
   return (
-    <article className="h-full w-full overflow-hidden rounded-card border border-line bg-surface transition hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(20,24,34,0.08)]">
+    <Link
+      href={`/carros/${car.slug}`}
+      className="block h-full w-full overflow-hidden rounded-card border border-line bg-surface transition hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(20,24,34,0.08)]"
+    >
       <div className={`relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-linear-to-br from-surface-2 to-canvas-soft ${isSold ? "grayscale-[0.5] brightness-90" : ""}`}>
         {isNew && (
           <span className="absolute top-2.5 left-2.5 rounded-full border border-brand-bright/30 bg-white/90 px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-brand-bright uppercase">
@@ -58,15 +61,10 @@ export function CarCard({ car }: { car: Car }) {
         ) : (
           <div className="flex items-center justify-between gap-2">
             <div className="tabular text-[1.05rem] font-extrabold">{formatPrice(car.preco)}</div>
-            <Link
-              href={`/carros/${car.slug}`}
-              className="rounded-full border border-line px-3.5 py-2 text-[0.78rem] font-bold transition hover:border-ink-dim"
-            >
-              Ver carro
-            </Link>
+            <span className="rounded-full border border-line px-3.5 py-2 text-[0.78rem] font-bold">Ver carro</span>
           </div>
         )}
       </div>
-    </article>
+    </Link>
   );
 }
