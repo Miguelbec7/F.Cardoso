@@ -38,10 +38,12 @@ export default function HomePage() {
           </section>
         )}
 
-        <section>
-          <SectionHead eyebrow="Prova social" title="Recentemente vendidos" />
-          <CarRow cars={sold} />
-        </section>
+        {sold.length > 0 && (
+          <section>
+            <SectionHead eyebrow="Prova social" title="Recentemente vendidos" />
+            <CarRow cars={sold} />
+          </section>
+        )}
 
         <VideoStrip src={videoStrip} poster={videoStripPoster} />
 
