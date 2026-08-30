@@ -22,6 +22,10 @@ export type SiteSettings = {
     facebook?: string;
     instagram?: string;
   };
+  financiamento?: {
+    taxaTAN: number;
+    prazoMaximoMeses: number;
+  };
 };
 
 export function getSiteSettings(): SiteSettings {

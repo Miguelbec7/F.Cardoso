@@ -18,5 +18,9 @@
   "redesSociais": {
     "facebook": "",
     "instagram": ""
+  },
+  "financiamento": {
+    "taxaTAN": 9.9,
+    "prazoMaximoMeses": 120
   }
 }

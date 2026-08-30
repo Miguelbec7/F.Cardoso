@@ -348,3 +348,16 @@ collections:
             fields:
               - { label: "Facebook (URL completo)", name: facebook, widget: string, required: false }
               - { label: "Instagram (URL completo)", name: instagram, widget: string, required: false }
+          - label: Financiamento
+            name: financiamento
+            widget: object
+            required: false
+            fields:
+              - {
+                  label: "Taxa de juro anual — TAN (%)",
+                  name: taxaTAN,
+                  widget: number,
+                  value_type: float,
+                  hint: "Usada só para a simulação em /financiamento — ajusta para bater certo com a taxa real do vosso parceiro financeiro.",
+                }
+              - { label: "Prazo máximo (meses)", name: prazoMaximoMeses, widget: number, value_type: int, default: 120 }
