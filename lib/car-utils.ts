@@ -6,7 +6,7 @@
 
 export type FuelType = "Gasolina" | "Diesel" | "Híbrido" | "Elétrico";
 export type Transmission = "Manual" | "Automática";
-export type BodyType = "Berlina" | "Break" | "SUV" | "Hatchback" | "Coupé" | "Comercial";
+export type BodyType = "Berlina" | "Break" | "SUV" | "Hatchback" | "Coupé" | "Comercial" | "Monovolume";
 export type CarStatus = "disponivel" | "reservado" | "vendido";
 
 export type Equipamento = {
