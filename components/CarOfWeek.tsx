@@ -30,10 +30,13 @@ export function CarOfWeek({ car, whatsappNumber }: { car: Car; whatsappNumber: s
         <div className="tabular my-3.5 text-[2rem] font-extrabold text-brand">{formatPrice(car.preco)}</div>
         <div className="mb-5 grid grid-cols-2 gap-x-5 gap-y-2.5">
           <div className="border-t border-line pt-2 text-[0.82rem] text-ink-dim">
-            <strong className="tabular block text-[0.92rem] text-ink">{car.ano}</strong>Ano
+            <strong className="tabular block text-[0.92rem] text-ink">{car.ano ?? "—"}</strong>Ano
           </div>
           <div className="border-t border-line pt-2 text-[0.82rem] text-ink-dim">
-            <strong className="tabular block text-[0.92rem] text-ink">{car.km.toLocaleString("pt-PT")} km</strong>Quilómetros
+            <strong className="tabular block text-[0.92rem] text-ink">
+              {car.km != null ? `${car.km.toLocaleString("pt-PT")} km` : "—"}
+            </strong>
+            Quilómetros
           </div>
           <div className="border-t border-line pt-2 text-[0.82rem] text-ink-dim">
             <strong className="block text-[0.92rem] text-ink">{car.combustivel} · {car.caixa}</strong>Combustível / Caixa

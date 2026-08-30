@@ -104,7 +104,7 @@ collections:
             widget: select
             multiple: true
             required: false
-            options: ["Jantes de liga leve", "Pintura metalizada", "Barras de tejadilho", "Reboque"]
+            options: ["Jantes de liga leve", "Pintura metalizada", "Barras de tejadilho", "Reboque", "Tração integral"]
           - label: Faróis
             name: farois
             widget: select
@@ -153,6 +153,8 @@ collections:
                 "Bancos desportivos",
                 "Bancos elétricos",
                 "Bancos aquecidos",
+                "Bancos ventilados",
+                "Bancos com memória",
                 "Bancos rebatíveis",
                 "Encostos de cabeça traseiros",
               ]
@@ -246,6 +248,8 @@ collections:
                 "Direção assistida",
                 "Sensores de chuva",
                 "Follow me home",
+                "Alerta de pressão dos pneus",
+                "Retrovisor interior eletrocrómico",
               ]
           - label: "Outros (não está na lista)"
             name: outros

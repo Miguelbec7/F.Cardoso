@@ -40,8 +40,9 @@ export type Car = {
   marca: string;
   modelo: string;
   versao: string;
-  ano: number;
-  km: number;
+  /** Em falta quando ainda não confirmado com o vendedor — nunca inventar um valor. */
+  ano?: number;
+  km?: number;
   combustivel: FuelType;
   caixa: Transmission;
   carroceria: BodyType;
@@ -92,5 +93,6 @@ export function whatsappLink(message: string, phone = "351900000000") {
 }
 
 export function carInterestMessage(car: Car) {
-  return `Olá, tenho interesse no ${car.marca} ${car.modelo} ${car.versao} (${car.ano}). Gostaria de saber se ainda está disponível.`;
+  const ano = car.ano ? ` (${car.ano})` : "";
+  return `Olá, tenho interesse no ${car.marca} ${car.modelo} ${car.versao}${ano}. Gostaria de saber se ainda está disponível.`;
 }

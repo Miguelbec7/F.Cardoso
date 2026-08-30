@@ -2,12 +2,10 @@
 marca: Mitsubishi
 modelo: L300
 versao: 2.5 Diesel
-ano: 2000
 estado: disponivel
 destaque: false
 carroDaSemana: false
 recemChegado: true
-km: 200000
 combustivel: Diesel
 caixa: Manual
 carroceria: Comercial

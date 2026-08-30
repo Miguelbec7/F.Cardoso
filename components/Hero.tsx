@@ -91,7 +91,8 @@ export function Hero({
         {car && (
           <div className={`mt-5 flex flex-wrap items-baseline gap-3 ${reveal(390)}`}>
             <span className="text-sm font-bold text-white">
-              {car.marca} {car.modelo} {car.versao} — {car.ano}
+              {car.marca} {car.modelo} {car.versao}
+              {car.ano ? ` — ${car.ano}` : ""}
             </span>
             <span className="tabular text-lg font-extrabold text-brand-glow">{formatPrice(car.preco)}</span>
           </div>

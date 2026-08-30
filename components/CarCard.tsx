@@ -40,12 +40,13 @@ export function CarCard({ car }: { car: Car }) {
           {car.marca} {car.modelo}
         </div>
         <div className="mt-0.5 text-[0.8rem] text-muted">
-          {car.ano} · {car.carroceria}
+          {car.ano ? `${car.ano} · ` : ""}
+          {car.carroceria}
         </div>
 
         {!isSold && (
           <div className="mt-2.5 mb-3 flex flex-wrap gap-x-3 gap-y-1.5 text-[0.74rem] text-ink-dim">
-            <span className="tabular">{formatKm(car.km)}</span>
+            {car.km != null && <span className="tabular">{formatKm(car.km)}</span>}
             <span>{car.combustivel}</span>
             <span>{car.caixa}</span>
             <span className="tabular">{car.potencia} cv</span>

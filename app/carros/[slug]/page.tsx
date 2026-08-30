@@ -28,8 +28,16 @@ export async function generateMetadata({
   const { slug } = await params;
   const car = getCarBySlug(slug);
   if (!car) return {};
-  const title = `${car.marca} ${car.modelo} ${car.versao} (${car.ano})`;
-  const description = `${car.marca} ${car.modelo} ${car.versao}, ${car.ano}, ${formatKm(car.km)}, ${car.combustivel}, ${car.caixa}. ${formatPrice(car.preco)}.`;
+  const title = `${car.marca} ${car.modelo} ${car.versao}${car.ano ? ` (${car.ano})` : ""}`;
+  const description = [
+    `${car.marca} ${car.modelo} ${car.versao}`,
+    car.ano ? String(car.ano) : null,
+    car.km != null ? formatKm(car.km) : null,
+    car.combustivel,
+    car.caixa,
+  ]
+    .filter(Boolean)
+    .join(", ") + `. ${formatPrice(car.preco)}.`;
   return {
     title,
     description,
@@ -53,8 +61,10 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
     name: `${car.marca} ${car.modelo} ${car.versao}`,
     brand: car.marca,
     model: car.modelo,
-    vehicleModelDate: String(car.ano),
-    mileageFromOdometer: { "@type": "QuantitativeValue", value: car.km, unitCode: "KMT" },
+    ...(car.ano ? { vehicleModelDate: String(car.ano) } : {}),
+    ...(car.km != null
+      ? { mileageFromOdometer: { "@type": "QuantitativeValue", value: car.km, unitCode: "KMT" } }
+      : {}),
     fuelType: car.combustivel,
     vehicleTransmission: car.caixa,
     color: car.cor,
@@ -116,8 +126,8 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
 
           <dl className="mt-6 grid grid-cols-2 gap-x-5 gap-y-3 border-t border-line pt-5">
             {[
-              ["Ano", String(car.ano)],
-              ["Quilómetros", formatKm(car.km)],
+              ["Ano", car.ano ? String(car.ano) : ""],
+              ["Quilómetros", car.km != null ? formatKm(car.km) : ""],
               ["Combustível", car.combustivel],
               ["Caixa", car.caixa],
               ["Cilindrada", car.cilindrada],
@@ -126,7 +136,9 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
               ["Carroçaria", car.carroceria],
               ["Garantia", car.garantia],
               ["Localização", car.localizacao],
-            ].map(([label, value]) => (
+            ]
+              .filter(([, value]) => !!value)
+              .map(([label, value]) => (
               <div key={label}>
                 <dt className="text-[0.7rem] tracking-wide text-muted uppercase">{label}</dt>
                 <dd className="tabular mt-0.5 text-[0.9rem] font-semibold">{value}</dd>
