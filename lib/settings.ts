@@ -23,7 +23,7 @@ export type SiteSettings = {
     instagram?: string;
   };
   financiamento?: {
-    taxaTAN: number;
+    escaloes: { ateMeses: number; taxaTAN: number }[];
     prazoMaximoMeses: number;
   };
 };

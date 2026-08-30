@@ -11,8 +11,10 @@ export const metadata: Metadata = {
 export default function FinanciamentoPage() {
   const cars = getAvailableCars();
   const { whatsappNumber, financiamento } = getSiteSettings();
-  const taxaTAN = financiamento?.taxaTAN ?? 9.9;
   const prazoMaximoMeses = financiamento?.prazoMaximoMeses ?? 120;
+  const escaloes = financiamento?.escaloes?.length
+    ? financiamento.escaloes
+    : [{ ateMeses: prazoMaximoMeses, taxaTAN: 9.9 }];
 
   return (
     <main className="mx-auto max-w-3xl px-5 py-14">
@@ -26,14 +28,14 @@ export default function FinanciamentoPage() {
       </p>
 
       <div className="mt-8">
-        <FinanceSimulator cars={cars} taxaTAN={taxaTAN} prazoMaximoMeses={prazoMaximoMeses} whatsappNumber={whatsappNumber} />
+        <FinanceSimulator cars={cars} escaloes={escaloes} prazoMaximoMeses={prazoMaximoMeses} whatsappNumber={whatsappNumber} />
       </div>
 
       <p className="mt-6 text-[0.78rem] text-muted">
-        Valores meramente indicativos, calculados com uma taxa de referência ({taxaTAN.toLocaleString("pt-PT")}%
-        TAN), sem outros custos associados ao crédito. Não constituem uma proposta de financiamento nem uma
-        garantia de aprovação — a mensalidade final depende da instituição financeira e do perfil de crédito.
-        Contacte-nos para uma simulação real e sem compromisso.
+        Valores meramente indicativos, calculados com taxas de referência que variam consoante o prazo escolhido,
+        sem outros custos associados ao crédito. Não constituem uma proposta de financiamento nem uma garantia de
+        aprovação — a mensalidade final depende da instituição financeira e do perfil de crédito. Contacte-nos
+        para uma simulação real e sem compromisso.
       </p>
     </main>
   );

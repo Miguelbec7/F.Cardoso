@@ -353,11 +353,11 @@ collections:
             widget: object
             required: false
             fields:
-              - {
-                  label: "Taxa de juro anual — TAN (%)",
-                  name: taxaTAN,
-                  widget: number,
-                  value_type: float,
-                  hint: "Usada só para a simulação em /financiamento — ajusta para bater certo com a taxa real do vosso parceiro financeiro.",
-                }
+              - label: "Escalões de taxa (TAN) por prazo"
+                name: escaloes
+                widget: list
+                hint: "A taxa varia consoante o prazo, tal como nos parceiros financeiros reais — ex.: até 24 meses uma taxa, até 48 outra, etc. Os escalões têm de cobrir até ao prazo máximo definido abaixo."
+                fields:
+                  - { label: "Até quantos meses", name: ateMeses, widget: number, value_type: int }
+                  - { label: "Taxa TAN (%)", name: taxaTAN, widget: number, value_type: float }
               - { label: "Prazo máximo (meses)", name: prazoMaximoMeses, widget: number, value_type: int, default: 120 }

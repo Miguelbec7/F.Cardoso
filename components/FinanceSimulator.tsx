@@ -11,12 +11,12 @@ const fieldClass =
 
 export function FinanceSimulator({
   cars,
-  taxaTAN,
+  escaloes,
   prazoMaximoMeses,
   whatsappNumber,
 }: {
   cars: Car[];
-  taxaTAN: number;
+  escaloes: { ateMeses: number; taxaTAN: number }[];
   prazoMaximoMeses: number;
   whatsappNumber: string;
 }) {
@@ -30,6 +30,8 @@ export function FinanceSimulator({
   const preco = carroSelecionado ? carroSelecionado.preco : valorManual;
   const meses = anos * 12;
   const financiado = Math.max(preco - entrada, 0);
+  const ordenados = [...escaloes].sort((a, b) => a.ateMeses - b.ateMeses);
+  const taxaTAN = (ordenados.find((e) => meses <= e.ateMeses) ?? ordenados[ordenados.length - 1])?.taxaTAN ?? 9.9;
   const taxaMensal = taxaTAN / 100 / 12;
 
   const mensalidade = useMemo(() => {
@@ -99,7 +101,11 @@ export function FinanceSimulator({
         </label>
       </div>
 
-      <div className="mt-7 grid grid-cols-3 gap-4 border-t border-line pt-6 text-center">
+      <p className="mt-4 text-[0.78rem] text-ink-dim">
+        Taxa aplicada a este prazo: <strong className="tabular text-ink">{taxaTAN.toLocaleString("pt-PT")}% TAN</strong>
+      </p>
+
+      <div className="mt-5 grid grid-cols-3 gap-4 border-t border-line pt-6 text-center">
         <div>
           <div className="tabular text-2xl font-extrabold text-brand">{formatPrice(Math.round(mensalidade))}</div>
           <div className="mt-1 text-[0.68rem] tracking-wide text-muted uppercase">Mensalidade estimada</div>

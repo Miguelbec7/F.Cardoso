@@ -20,7 +20,12 @@
     "instagram": ""
   },
   "financiamento": {
-    "taxaTAN": 9.9,
+    "escaloes": [
+      { "ateMeses": 24, "taxaTAN": 9.5 },
+      { "ateMeses": 48, "taxaTAN": 9.9 },
+      { "ateMeses": 84, "taxaTAN": 10.1 },
+      { "ateMeses": 120, "taxaTAN": 10.25 }
+    ],
     "prazoMaximoMeses": 120
   }
 }
