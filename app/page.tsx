@@ -5,14 +5,17 @@ import { StatsStrip } from "@/components/StatsStrip";
 import { SectionHead } from "@/components/SectionHead";
 import { CarRow } from "@/components/CarRow";
 import { CarOfWeek } from "@/components/CarOfWeek";
+import { SoldAndDeliveries } from "@/components/SoldAndDeliveries";
 import { Testimonials } from "@/components/Testimonials";
 import { VideoStrip } from "@/components/VideoStrip";
 import { getFeaturedCars, getSoldCars, getCarOfTheWeek, getBrands } from "@/lib/cars";
+import { getEntregas } from "@/lib/entregas";
 import { getSiteSettings } from "@/lib/settings";
 
 export default function HomePage() {
   const featured = getFeaturedCars();
   const sold = getSoldCars(8);
+  const entregas = getEntregas();
   const carOfWeek = getCarOfTheWeek();
   const heroCars = featured.slice(0, 3);
   const brands = getBrands();
@@ -38,10 +41,19 @@ export default function HomePage() {
           </section>
         )}
 
-        {sold.length > 0 && (
+        {(sold.length > 0 || entregas.length > 0) && (
           <section>
-            <SectionHead eyebrow="Prova social" title="Recentemente vendidos" />
-            <CarRow cars={sold} />
+            <SectionHead
+              eyebrow="Prova social"
+              title={
+                sold.length > 0 && entregas.length > 0
+                  ? "Histórico da loja"
+                  : sold.length > 0
+                    ? "Recentemente vendidos"
+                    : "Fotos de entrega"
+              }
+            />
+            <SoldAndDeliveries sold={sold} entregas={entregas} />
           </section>
         )}
 

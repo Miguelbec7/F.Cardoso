@@ -281,6 +281,31 @@ collections:
       - { label: Texto da avaliação, name: texto, widget: text }
       - { label: Foto do cliente (opcional), name: foto, widget: image, required: false }
 
+  - name: entregas
+    label: Fotos de entrega
+    label_singular: Foto de entrega
+    folder: content/entregas
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{fields.cliente}}"
+    summary: "{{cliente}} — {{carro}}"
+    sortable_fields: ["data"]
+    fields:
+      - {
+          label: "Foto (cliente com o carro)",
+          name: foto,
+          widget: image,
+          hint: "Só usar fotos onde o cliente não se importe de aparecer no site — tapar matrícula/cara se necessário.",
+        }
+      - { label: Nome do cliente, name: cliente, widget: string, required: false }
+      - { label: Automóvel, name: carro, widget: string, required: false }
+      - {
+          label: "Legenda (opcional, substitui o texto automático)",
+          name: legenda,
+          widget: string,
+          required: false,
+        }
+      - { label: Data da entrega, name: data, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+
   - name: settings
     label: Definições do site
     files:
