@@ -186,6 +186,12 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
                 >
                   Tenho carro p/ retoma
                 </Link>
+                <Link
+                  href={`/financiamento?carro=${car.slug}`}
+                  className="col-span-2 flex items-center justify-center rounded-full border border-brand-bright/40 bg-brand-bright/5 px-4 py-3 text-center text-[0.82rem] font-bold text-brand-bright transition hover:bg-brand-bright/10"
+                >
+                  Simular financiamento deste carro
+                </Link>
               </div>
             </div>
           ) : (

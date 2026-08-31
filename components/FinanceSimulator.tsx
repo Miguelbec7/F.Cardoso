@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import type { Car } from "@/lib/car-utils";
 import { formatPrice, whatsappLink } from "@/lib/car-utils";
 import { WhatsAppIcon } from "./icons";
@@ -21,7 +22,11 @@ export function FinanceSimulator({
   whatsappNumber: string;
 }) {
   const anosMax = Math.max(1, Math.round(prazoMaximoMeses / 12));
-  const [carroSlug, setCarroSlug] = useState(MANUAL);
+  const searchParams = useSearchParams();
+  const carroParam = searchParams.get("carro");
+  const [carroSlug, setCarroSlug] = useState(
+    carroParam && cars.some((c) => c.slug === carroParam) ? carroParam : MANUAL
+  );
   const [valorManual, setValorManual] = useState(15000);
   const [entrada, setEntrada] = useState(2000);
   const [anos, setAnos] = useState(Math.min(6, anosMax));

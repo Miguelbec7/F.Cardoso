@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { getAvailableCars } from "@/lib/cars";
 import { getSiteSettings } from "@/lib/settings";
 import { FinanceSimulator } from "@/components/FinanceSimulator";
@@ -28,7 +29,9 @@ export default function FinanciamentoPage() {
       </p>
 
       <div className="mt-8">
-        <FinanceSimulator cars={cars} escaloes={escaloes} prazoMaximoMeses={prazoMaximoMeses} whatsappNumber={whatsappNumber} />
+        <Suspense fallback={null}>
+          <FinanceSimulator cars={cars} escaloes={escaloes} prazoMaximoMeses={prazoMaximoMeses} whatsappNumber={whatsappNumber} />
+        </Suspense>
       </div>
 
       <p className="mt-6 text-[0.78rem] text-muted">
