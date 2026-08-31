@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: Miguelbec7/F.Cardoso
-  branch: claude/fcardoso-auto-website-sgw200
+  branch: main
   base_url: https://fcardoso-cms-auth.miguelbec97.workers.dev
   auth_endpoint: auth
 
