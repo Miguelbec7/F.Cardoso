@@ -93,6 +93,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
         <div>
           <CarGallery
             fotos={car.fotos}
+            video={car.video}
             alt={`${car.marca} ${car.modelo}`}
             badge={
               isSold ? (

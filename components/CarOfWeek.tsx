@@ -14,6 +14,8 @@ export function CarOfWeek({ car, whatsappNumber }: { car: Car; whatsappNumber: s
       >
         {cover ? (
           <Image src={cover} alt={`${car.marca} ${car.modelo}`} fill className="object-cover" />
+        ) : car.video ? (
+          <video className="h-full w-full object-cover" src={car.video} autoPlay muted loop playsInline preload="auto" />
         ) : (
           <CarSilhouette className="w-2/3 opacity-45" stroke="#7fa0ea" />
         )}

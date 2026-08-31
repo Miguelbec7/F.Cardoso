@@ -5,7 +5,7 @@ versao: 114 CDI
 ano: 2019
 estado: disponivel
 destaque: true
-carroDaSemana: false
+carroDaSemana: true
 recemChegado: true
 km: 78500
 combustivel: Diesel
