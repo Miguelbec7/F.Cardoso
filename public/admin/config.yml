@@ -275,8 +275,16 @@ collections:
     summary: "{{nome}} — {{carro}}"
     fields:
       - { label: Nome do cliente, name: nome, widget: string }
+      - {
+          label: Origem,
+          name: fonte,
+          widget: select,
+          options: [{ label: Facebook, value: facebook }, { label: Google, value: google }],
+          default: facebook,
+          hint: "Enquanto não ligarmos a API do Google, usa Facebook para as avaliações reais copiadas de lá.",
+        }
       - { label: Estrelas (1-5), name: estrelas, widget: number, value_type: int, min: 1, max: 5, default: 5 }
-      - { label: Automóvel comprado, name: carro, widget: string }
+      - { label: "Automóvel comprado (opcional)", name: carro, widget: string, required: false }
       - { label: Data, name: data, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: Texto da avaliação, name: texto, widget: text }
       - { label: Foto do cliente (opcional), name: foto, widget: image, required: false }
@@ -315,6 +323,9 @@ collections:
         fields:
           - { label: Número de WhatsApp (só dígitos, com indicativo 351), name: whatsappNumber, widget: string }
           - { label: Telefone (para exibir), name: telefone, widget: string }
+          - { label: Morada, name: morada, widget: string, required: false }
+          - { label: "Link do Google Maps (partilhar > copiar link)", name: googleMapsUrl, widget: string, required: false }
+          - { label: Horário, name: horario, widget: string, required: false }
           - { label: Vídeo de fundo do Hero, name: heroVideo, widget: file, required: false }
           - { label: Poster do vídeo do Hero (frame estático), name: heroVideoPoster, widget: image, required: false }
           - {

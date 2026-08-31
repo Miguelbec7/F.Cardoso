@@ -1,6 +1,6 @@
 import { getTestimonials } from "@/lib/testimonials";
 import { getSiteSettings } from "@/lib/settings";
-import { GoogleGIcon } from "./icons";
+import { GoogleGIcon, FacebookIcon } from "./icons";
 
 const avatarPalette = ["#17265c", "#2a4bb0", "#33363d", "#5a6270", "#0f9d58"];
 
@@ -15,19 +15,22 @@ function Stars({ count }: { count: number }) {
 
 export function Testimonials() {
   const testimonials = getTestimonials();
-  const { googleReviews } = getSiteSettings();
+  const { redesSociais } = getSiteSettings();
+  const temGoogle = testimonials.some((t) => t.fonte === "google");
+  const temFacebook = testimonials.some((t) => t.fonte === "facebook");
 
   return (
     <div>
-      <div className="mb-5 flex flex-wrap items-center gap-2.5 text-[0.95rem]">
-        <GoogleGIcon className="h-5 w-5" />
-        <span>
-          Avaliação de <strong className="tabular">{googleReviews.media.toFixed(1)}</strong>
-        </span>
-        <span className="text-star">★</span>
-        <span className="text-ink-dim">
-          com base em <strong className="tabular text-ink">{googleReviews.total}</strong> reviews
-        </span>
+      <div className="mb-5 flex flex-wrap items-center gap-2.5 text-[0.95rem] text-ink-dim">
+        {temGoogle && <GoogleGIcon className="h-5 w-5" />}
+        {temFacebook && <FacebookIcon className="h-4 w-4 text-[#1877F2]" />}
+        {redesSociais?.facebook ? (
+          <a href={redesSociais.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-ink-dim">
+            Avaliações reais dos nossos clientes
+          </a>
+        ) : (
+          <span>Avaliações reais dos nossos clientes</span>
+        )}
       </div>
 
       <div className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4">
@@ -54,8 +57,12 @@ export function Testimonials() {
               <Stars count={t.estrelas} />
             </div>
             <p className="mt-2.5 text-[0.9rem] text-ink-dim">{t.texto}</p>
-            <div className="mt-3 text-[0.76rem] font-semibold text-muted">{t.carro}</div>
-            <GoogleGIcon className="absolute right-4 bottom-4 h-4 w-4" />
+            {t.carro && <div className="mt-3 text-[0.76rem] font-semibold text-muted">{t.carro}</div>}
+            {t.fonte === "google" ? (
+              <GoogleGIcon className="absolute right-4 bottom-4 h-4 w-4" />
+            ) : (
+              <FacebookIcon className="absolute right-4 bottom-4 h-4 w-4 text-[#1877F2]" />
+            )}
           </article>
         ))}
       </div>

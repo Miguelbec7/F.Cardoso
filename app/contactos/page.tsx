@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactosPage() {
-  const { whatsappNumber, telefone } = getSiteSettings();
+  const { whatsappNumber, telefone, morada, googleMapsUrl, horario } = getSiteSettings();
 
   return (
     <main className="mx-auto max-w-3xl px-5 py-14">
@@ -69,17 +69,28 @@ export default function ContactosPage() {
 
       <section className="mt-14 border-t border-line pt-10">
         <h2 className="text-lg font-extrabold tracking-tight">Onde estamos</h2>
-        <p className="mt-2 text-ink-dim">Elvas, Portugal</p>
+        <p className="mt-2 text-ink-dim">{morada || "Elvas, Portugal"}</p>
+        {horario && <p className="mt-1 text-ink-dim">Horário: {horario}</p>}
         <div className="mt-4 aspect-video overflow-hidden rounded-card border border-line">
           <iframe
             title="Localização — F. Cardoso Automóveis"
-            src="https://www.google.com/maps?q=F.+Cardoso+Automóveis,+Elvas&output=embed"
+            src={`https://www.google.com/maps?q=${encodeURIComponent(morada || "F. Cardoso Automóveis, Elvas")}&output=embed`}
             width="100%"
             height="100%"
             style={{ border: 0 }}
             loading="lazy"
           />
         </div>
+        {googleMapsUrl && (
+          <a
+            href={googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block text-[0.85rem] font-bold text-brand-bright hover:underline"
+          >
+            Ver no Google Maps →
+          </a>
+        )}
       </section>
     </main>
   );

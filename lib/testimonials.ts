@@ -10,6 +10,7 @@ export type Testimonial = {
   data: string;
   texto: string;
   foto?: string;
+  fonte: "google" | "facebook";
 };
 
 const DIR = path.join(process.cwd(), "content", "testemunhos");
@@ -28,6 +29,7 @@ export function getTestimonials(): Testimonial[] {
         data: String(data.data),
         texto: data.texto,
         foto: data.foto || undefined,
+        fonte: data.fonte === "google" ? "google" : "facebook",
       } satisfies Testimonial;
     })
     .sort((a, b) => +new Date(b.data) - +new Date(a.data));
