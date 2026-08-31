@@ -19,12 +19,12 @@ export default function HomePage() {
   const carOfWeek = getCarOfTheWeek();
   const heroCars = featured.slice(0, 3);
   const brands = getBrands();
-  const { whatsappNumber, stats, heroVideo, heroVideoPoster, videoStrip, videoStripPoster } = getSiteSettings();
+  const { whatsappNumber, stats, heroVideo, heroVideoPoster, videoStrip, videoStripPoster, logosMarcas } = getSiteSettings();
 
   return (
     <main>
       <Hero cars={heroCars} whatsappNumber={whatsappNumber} videoSrc={heroVideo} videoPoster={heroVideoPoster} />
-      <BrandStrip brands={brands} />
+      <BrandStrip brands={brands} logosMarcas={logosMarcas} />
 
       <div className="mx-auto max-w-6xl space-y-16 px-5 py-14">
         <StatsStrip stats={stats} />

@@ -1,6 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 
-export function BrandStrip({ brands }: { brands: string[] }) {
+export function BrandStrip({
+  brands,
+  logosMarcas = [],
+}: {
+  brands: string[];
+  logosMarcas?: { marca: string; logo: string }[];
+}) {
+  const findLogo = (brand: string) =>
+    logosMarcas.find((l) => l.marca.trim().toLowerCase() === brand.trim().toLowerCase())?.logo || undefined;
+
   return (
     <div className="relative z-10 -mt-8 md:-mt-10">
       <div className="mx-auto max-w-6xl px-5">
@@ -12,15 +22,25 @@ export function BrandStrip({ brands }: { brands: string[] }) {
             <span className="text-[0.68rem] font-extrabold tracking-wide uppercase">Ver stock</span>
             <span className="text-[0.68rem] font-extrabold tracking-wide uppercase">todo</span>
           </Link>
-          {brands.map((brand) => (
-            <Link
-              key={brand}
-              href={`/carros?marca=${encodeURIComponent(brand)}`}
-              className="flex shrink-0 items-center justify-center rounded-xl border border-line bg-canvas-soft px-5 py-3 text-[0.8rem] font-bold text-ink-dim transition hover:border-brand-bright hover:text-brand"
-            >
-              {brand}
-            </Link>
-          ))}
+          {brands.map((brand) => {
+            const logo = findLogo(brand);
+            return (
+              <Link
+                key={brand}
+                href={`/carros?marca=${encodeURIComponent(brand)}`}
+                aria-label={brand}
+                className="flex shrink-0 items-center justify-center rounded-xl border border-line bg-canvas-soft px-5 py-3 text-[0.8rem] font-bold text-ink-dim transition hover:border-brand-bright hover:text-brand"
+              >
+                {logo ? (
+                  <span className="relative block h-6 w-20">
+                    <Image src={logo} alt={brand} fill className="object-contain" />
+                  </span>
+                ) : (
+                  brand
+                )}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

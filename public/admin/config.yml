@@ -348,10 +348,14 @@ collections:
             fields:
               - { label: Média (0 a 5), name: media, widget: number, value_type: float }
               - { label: Nº de reviews, name: total, widget: number, value_type: int }
-          - label: Marcas em destaque (faixa da homepage)
-            name: marcas
+          - label: "Logótipos das marcas (faixa da homepage)"
+            name: logosMarcas
             widget: list
-            field: { label: Marca, name: marca, widget: string }
+            required: false
+            hint: "A faixa de marcas na homepage é automática (aparece sozinha consoante os carros no stock). Isto é só para trocar o nome em texto pelo logótipo oficial de uma marca — usa aqui só quando quiseres, marca a marca. Sem logo definido, continua a mostrar o nome em texto."
+            fields:
+              - { label: "Nome da marca (igual ao campo Marca dos carros, ex: Mercedes-Benz)", name: marca, widget: string }
+              - { label: "Logótipo (fundo transparente, PNG)", name: logo, widget: image }
           - label: Redes sociais
             name: redesSociais
             widget: object

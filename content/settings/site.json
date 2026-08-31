@@ -17,19 +17,37 @@
     "media": 5.0,
     "total": 19
   },
-  "marcas": ["Renault", "Skoda", "Peugeot", "Kia", "Mitsubishi", "Mercedes-Benz"],
+  "logosMarcas": [],
   "redesSociais": {
     "facebook": "https://www.facebook.com/share/1FeD7oEYfj/",
     "instagram": "https://www.instagram.com/fcardosouni/"
   },
   "financiamento": {
     "escaloes": [
-      { "ateMeses": 12, "taxaTAN": 9.5 },
-      { "ateMeses": 36, "taxaTAN": 9.9 },
-      { "ateMeses": 48, "taxaTAN": 10.0 },
-      { "ateMeses": 60, "taxaTAN": 10.1 },
-      { "ateMeses": 72, "taxaTAN": 10.25 },
-      { "ateMeses": 120, "taxaTAN": 10.1 }
+      {
+        "ateMeses": 12,
+        "taxaTAN": 9.5
+      },
+      {
+        "ateMeses": 36,
+        "taxaTAN": 9.9
+      },
+      {
+        "ateMeses": 48,
+        "taxaTAN": 10.0
+      },
+      {
+        "ateMeses": 60,
+        "taxaTAN": 10.1
+      },
+      {
+        "ateMeses": 72,
+        "taxaTAN": 10.25
+      },
+      {
+        "ateMeses": 120,
+        "taxaTAN": 10.1
+      }
     ],
     "prazoMaximoMeses": 120
   }

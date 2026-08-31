@@ -20,7 +20,7 @@ export type SiteSettings = {
     media: number;
     total: number;
   };
-  marcas: string[];
+  logosMarcas?: { marca: string; logo: string }[];
   redesSociais?: {
     facebook?: string;
     instagram?: string;
