@@ -46,10 +46,14 @@ equipamento:
     - Vidros escurecidos
   outros:
     - Mala elétrica
-descricao: Mazda CX-5 Skyactiv-D, a versão mais completa dentro deste modelo SUV. Carro nacional, sempre revisado a tempo e horas, super dinâmico, com uma condução magnífica, um conforto único e um espaço interior incrível. Revisão geral feita, 2 pneus novos e 2 a 85%. Aceita retoma e crédito automóvel.
+descricao: Mazda CX-5 Skyactiv-D, a versão mais completa dentro deste modelo
+  SUV. Carro nacional, sempre revisado a tempo e horas, super dinâmico, com uma
+  condução magnífica, um conforto único e um espaço interior incrível. Revisão
+  geral feita, 2 pneus novos e 2 a 85%. Aceita retoma e crédito automóvel.
 garantia: Garantia por mútuo acordo
 localizacao: Elvas
 criadoEm: 2026-09-01
-fotos: []
+fotos:
+  - /uploads/mazda-cx5.jpg
 video: ""
 ---
