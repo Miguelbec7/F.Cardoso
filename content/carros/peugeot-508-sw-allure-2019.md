@@ -4,7 +4,7 @@ modelo: 508
 versao: SW Allure 1.5 BlueHDi
 ano: 2019
 estado: disponivel
-destaque: false
+destaque: true
 carroDaSemana: false
 recemChegado: true
 km: 93800
