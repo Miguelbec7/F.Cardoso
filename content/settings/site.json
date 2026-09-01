@@ -1,27 +1,16 @@
 {
-  "whatsappNumber": "351969547461",
-  "telefone": "+351 969 547 461",
-  "morada": "Rua de Luxemburgo, 7350-006 Elvas",
-  "googleMapsUrl": "https://maps.app.goo.gl/JweMLTbY9vDa7aKG9",
-  "horario": "Sempre aberto",
   "heroVideo": "/uploads/hero/hero-loop-2.mp4",
-  "heroVideoPoster": "/uploads/hero/hero-loop-2-poster.jpg",
-  "videoStrip": "/uploads/hero/video-strip-2.mp4",
-  "videoStripPoster": "/uploads/hero/video-strip-2-poster.jpg",
-  "stats": {
-    "viaturasVendidas": "500+",
-    "clientesSatisfeitos": "98%",
-    "anosExperiencia": "15"
-  },
   "googleReviews": {
-    "media": 5.0,
+    "media": 5,
     "total": 19
   },
-  "logosMarcas": [],
+  "horario": "Sempre aberto",
   "redesSociais": {
     "facebook": "https://www.facebook.com/share/1FeD7oEYfj/",
     "instagram": "https://www.instagram.com/fcardosouni/"
   },
+  "telefone": "+351 969 547 461",
+  "videoStripPoster": "/uploads/hero/video-strip-2-poster.jpg",
   "financiamento": {
     "escaloes": [
       {
@@ -34,7 +23,7 @@
       },
       {
         "ateMeses": 48,
-        "taxaTAN": 10.0
+        "taxaTAN": 10
       },
       {
         "ateMeses": 60,
@@ -50,5 +39,41 @@
       }
     ],
     "prazoMaximoMeses": 120
-  }
+  },
+  "heroVideoPoster": "/uploads/hero/hero-loop-2-poster.jpg",
+  "morada": "Rua de Luxemburgo, 7350-006 Elvas",
+  "whatsappNumber": "351969547461",
+  "videoStrip": "/uploads/hero/video-strip-2.mp4",
+  "stats": {
+    "viaturasVendidas": "500+",
+    "clientesSatisfeitos": "98%",
+    "anosExperiencia": "15"
+  },
+  "googleMapsUrl": "https://maps.app.goo.gl/JweMLTbY9vDa7aKG9",
+  "logosMarcas": [
+    {
+      "marca": "Mercedes-Benz",
+      "logo": "https://logos-world.net/wp-content/uploads/2020/05/Mercedes-Benz-Logo.png"
+    },
+    {
+      "marca": "Kia",
+      "logo": "https://www.designyourway.net/blog/wp-content/uploads/2023/06/Logo-1-2.jpg"
+    },
+    {
+      "marca": "Skoda",
+      "logo": "https://tse1.mm.bing.net/th/id/OIP.nRMpBPBLCtTcTLfXQI0xXwHaI4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+    },
+    {
+      "marca": "Mitsubishi",
+      "logo": "https://logos-world.net/wp-content/uploads/2021/09/Mitsubishi-Logo.png"
+    },
+    {
+      "marca": "Peugeot",
+      "logo": "https://fabrikbrands.com/wp-content/uploads/Peugeot-Logo-1.png"
+    },
+    {
+      "marca": "Renault",
+      "logo": "https://th.bing.com/th/id/R.b6347c2a2672cdc8914825615cf818bf?rik=Hchg4m1HRmSauQ&pid=ImgRaw&r=0"
+    }
+  ]
 }
