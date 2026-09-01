@@ -46,7 +46,15 @@ export function SiteFooter() {
           <Link href="/sobre" className="hover:text-ink-dim">Sobre</Link>
           <Link href="/contactos" className="hover:text-ink-dim">Contactos</Link>
         </nav>
-        <div>Elvas · © {new Date().getFullYear()} F. Cardoso Automóveis. Todos os direitos reservados.</div>
+        <div className="flex flex-wrap items-center justify-between gap-x-5 gap-y-2 border-t border-line pt-3">
+          <div>Elvas · © {new Date().getFullYear()} F. Cardoso Automóveis. Todos os direitos reservados.</div>
+          <nav className="flex flex-wrap gap-x-4 gap-y-1 text-[0.74rem]">
+            <Link href="/aviso-legal" className="hover:text-ink-dim">Aviso Legal</Link>
+            <Link href="/privacidade" className="hover:text-ink-dim">Privacidade</Link>
+            <Link href="/cookies" className="hover:text-ink-dim">Cookies</Link>
+            <Link href="/termos-condicoes" className="hover:text-ink-dim">Termos e Condições</Link>
+          </nav>
+        </div>
       </div>
     </footer>
   );
