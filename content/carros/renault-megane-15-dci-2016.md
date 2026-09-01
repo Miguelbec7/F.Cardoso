@@ -43,10 +43,14 @@ equipamento:
     - 2 pneus traseiros novos
     - Bateria nova
     - Pastilhas de travão da frente novas
-descricao: Renault Mégane em excelentes condições gerais, muito bem estimado, económico, confortável e espaçoso, com condução agradável e caixa de 6 velocidades. Pronto a circular e a transferir. Aceita retoma e possibilidade de facilitar o pagamento.
+descricao: Renault Mégane em excelentes condições gerais, muito bem estimado,
+  económico, confortável e espaçoso, com condução agradável e caixa de 6
+  velocidades. Pronto a circular e a transferir. Aceita retoma e possibilidade
+  de facilitar o pagamento.
 garantia: Garantia por mútuo acordo
 localizacao: Elvas
 criadoEm: 2026-08-30
-fotos: []
+fotos:
+  - /uploads/megane-2016.jpg
 video: ""
 ---
