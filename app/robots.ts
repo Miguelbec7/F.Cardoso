@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/admin"],
     },
-    sitemap: "https://f-cardoso.pages.dev/sitemap.xml",
+    sitemap: "https://fcardoso-automoveis.com/sitemap.xml",
   };
 }

@@ -5,7 +5,7 @@ import { MobileBar } from "@/components/MobileBar";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
-const SITE_URL = "https://f-cardoso.pages.dev";
+const SITE_URL = "https://fcardoso-automoveis.com";
 const DEFAULT_DESCRIPTION =
   "Viaturas selecionadas, verificadas e prontas a conduzir. Compra, venda, retoma e financiamento com o acompanhamento de uma equipa dedicada.";
 

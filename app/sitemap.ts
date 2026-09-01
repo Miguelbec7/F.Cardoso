@@ -3,7 +3,7 @@ import { cars } from "@/lib/cars";
 
 export const dynamic = "force-static";
 
-const SITE_URL = "https://f-cardoso.pages.dev";
+const SITE_URL = "https://fcardoso-automoveis.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
