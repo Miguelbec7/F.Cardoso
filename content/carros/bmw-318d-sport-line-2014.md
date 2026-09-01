@@ -40,10 +40,14 @@ equipamento:
     - Mala elétrica
     - Luzes LED automáticas
     - Kit de corrente e bomba de água trocados há cerca de 50.000 km
-descricao: BMW Série 3 318d Sport-Line, carrinha completamente impecável, toda revisada, sempre assistida com vários comprovativos. Nacional, muito bem estimada a todos os níveis, económica e com condução muito agradável, segura e estável. Aceita retoma e possibilidade de prestações.
+descricao: BMW Série 3 318d Sport-Line, carrinha completamente impecável, toda
+  revisada, sempre assistida com vários comprovativos. Nacional, muito bem
+  estimada a todos os níveis, económica e com condução muito agradável, segura e
+  estável. Aceita retoma e possibilidade de prestações.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-09-01
-fotos: []
+fotos:
+  - /uploads/bmw-318.jpg
 video: ""
 ---
