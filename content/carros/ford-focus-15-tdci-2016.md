@@ -39,10 +39,15 @@ equipamento:
     - Retrovisores exteriores com regulação elétrica
   outros:
     - Desembaçador dos espelhos retrovisores
-descricao: Ford Focus 1.5 TDCi, carrinha em perfeitas condições gerais, com kit de distribuição e bomba de água mudados, revisão geral de óleo e filtros feita e 4 pneus novos. Muito económica, dinâmica, confortável e estável, com uma condução super agradável. Aceita retoma e crédito automóvel, com dedução de IVA.
+descricao: Ford Focus 1.5 TDCi, carrinha em perfeitas condições gerais, com kit
+  de distribuição e bomba de água mudados, revisão geral de óleo e filtros feita
+  e 4 pneus novos. Muito económica, dinâmica, confortável e estável, com uma
+  condução super agradável. Aceita retoma e crédito automóvel, com dedução de
+  IVA.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-09-01
-fotos: []
+fotos:
+  - /uploads/ford.jpg
 video: ""
 ---
