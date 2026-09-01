@@ -49,7 +49,8 @@ export type Car = {
   cilindrada: string;
   potencia: number;
   cor: string;
-  preco: number;
+  /** Em falta quando o valor de venda não foi divulgado (ex.: anúncios antigos já vendidos) — nunca inventar um valor. */
+  preco?: number;
   precoAnterior?: number;
   estado: CarStatus;
   destaque: boolean;

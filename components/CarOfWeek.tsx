@@ -32,7 +32,9 @@ export function CarOfWeek({ car, whatsappNumber }: { car: Car; whatsappNumber: s
         <h3 className="text-2xl font-extrabold tracking-tight">
           {car.marca} {car.modelo} {car.versao}
         </h3>
-        <div className="tabular my-3.5 text-[2rem] font-extrabold text-brand">{formatPrice(car.preco)}</div>
+        <div className="tabular my-3.5 text-[2rem] font-extrabold text-brand">
+          {car.preco != null ? formatPrice(car.preco) : "Preço sob consulta"}
+        </div>
         <div className="mb-5 grid grid-cols-2 gap-x-5 gap-y-2.5">
           <div className="border-t border-line pt-2 text-[0.82rem] text-ink-dim">
             <strong className="tabular block text-[0.92rem] text-ink">{car.ano ?? "—"}</strong>Ano

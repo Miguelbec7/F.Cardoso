@@ -7,7 +7,7 @@ import { CarSilhouette } from "./icons";
 export function CarCard({ car }: { car: Car }) {
   const isSold = car.estado === "vendido";
   const isNew = isCarNew(car);
-  const hasPriceDrop = !isSold && !!car.precoAnterior && car.precoAnterior > car.preco;
+  const hasPriceDrop = !isSold && !!car.precoAnterior && car.preco != null && car.precoAnterior > car.preco;
   const cover = car.fotos[0];
 
   return (
@@ -60,7 +60,9 @@ export function CarCard({ car }: { car: Car }) {
           <div className="mt-3 text-[0.8rem] text-muted">Viatura vendida — obrigado pela confiança.</div>
         ) : (
           <div className="flex items-center justify-between gap-2">
-            <div className="tabular text-[1.05rem] font-extrabold">{formatPrice(car.preco)}</div>
+            <div className="tabular text-[1.05rem] font-extrabold">
+              {car.preco != null ? formatPrice(car.preco) : "Sob consulta"}
+            </div>
             <span className="rounded-full border border-line px-3.5 py-2 text-[0.78rem] font-bold">Ver carro</span>
           </div>
         )}

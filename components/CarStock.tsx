@@ -26,10 +26,11 @@ export function CarStock({ cars }: { cars: Car[] }) {
     if (combustivel !== ALL && c.combustivel !== combustivel) return false;
     if (caixa !== ALL && c.caixa !== caixa) return false;
     if (carroceria !== ALL && c.carroceria !== carroceria) return false;
-    if (precoMax === "Até 25 000 €" && c.preco > 25000) return false;
-    if (precoMax === "Até 35 000 €" && c.preco > 35000) return false;
-    if (precoMax === "Até 50 000 €" && c.preco > 50000) return false;
-    if (precoMax === "Mais de 50 000 €" && c.preco <= 50000) return false;
+    const preco = c.preco ?? 0;
+    if (precoMax === "Até 25 000 €" && preco > 25000) return false;
+    if (precoMax === "Até 35 000 €" && preco > 35000) return false;
+    if (precoMax === "Até 50 000 €" && preco > 50000) return false;
+    if (precoMax === "Mais de 50 000 €" && preco <= 50000) return false;
     return true;
   });
 

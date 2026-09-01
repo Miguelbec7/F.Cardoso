@@ -32,7 +32,7 @@ export function FinanceSimulator({
   const [anos, setAnos] = useState(Math.min(6, anosMax));
 
   const carroSelecionado = cars.find((c) => c.slug === carroSlug);
-  const preco = carroSelecionado ? carroSelecionado.preco : valorManual;
+  const preco = carroSelecionado ? (carroSelecionado.preco ?? 0) : valorManual;
   const meses = anos * 12;
   const financiado = Math.max(preco - entrada, 0);
   const ordenados = [...escaloes].sort((a, b) => a.ateMeses - b.ateMeses);
@@ -62,7 +62,7 @@ export function FinanceSimulator({
             <option value={MANUAL}>Outro valor (introduzir manualmente)</option>
             {cars.map((c) => (
               <option key={c.slug} value={c.slug}>
-                {c.marca} {c.modelo} — {formatPrice(c.preco)}
+                {c.marca} {c.modelo} — {c.preco != null ? formatPrice(c.preco) : "preço sob consulta"}
               </option>
             ))}
           </select>

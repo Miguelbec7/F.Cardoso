@@ -94,7 +94,9 @@ export function Hero({
               {car.marca} {car.modelo} {car.versao}
               {car.ano ? ` — ${car.ano}` : ""}
             </span>
-            <span className="tabular text-lg font-extrabold text-brand-glow">{formatPrice(car.preco)}</span>
+            {car.preco != null && (
+              <span className="tabular text-lg font-extrabold text-brand-glow">{formatPrice(car.preco)}</span>
+            )}
           </div>
         )}
 

@@ -37,7 +37,7 @@ export async function generateMetadata({
     car.caixa,
   ]
     .filter(Boolean)
-    .join(", ") + `. ${formatPrice(car.preco)}.`;
+    .join(", ") + (car.preco != null ? `. ${formatPrice(car.preco)}.` : ".");
   const image = car.fotos[0] || "/og-image.png";
   return {
     title,
@@ -72,7 +72,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
     color: car.cor,
     offers: {
       "@type": "Offer",
-      price: car.preco,
+      ...(car.preco != null ? { price: car.preco } : {}),
       priceCurrency: "EUR",
       availability: isSold ? "https://schema.org/SoldOut" : "https://schema.org/InStock",
     },
@@ -122,7 +122,9 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
           <h1 className="mt-1 text-2xl font-extrabold tracking-tight text-balance">
             {car.modelo} {car.versao}
           </h1>
-          <div className="tabular mt-3 text-3xl font-extrabold">{formatPrice(car.preco)}</div>
+          <div className="tabular mt-3 text-3xl font-extrabold">
+            {car.preco != null ? formatPrice(car.preco) : "Preço não divulgado"}
+          </div>
           {car.precoAnterior && (
             <div className="tabular mt-1 text-sm text-muted line-through">{formatPrice(car.precoAnterior)}</div>
           )}
