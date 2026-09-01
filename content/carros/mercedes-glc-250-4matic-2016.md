@@ -14,7 +14,6 @@ carroceria: SUV
 cilindrada: 2143 cc
 potencia: 204
 cor: ""
-preco: 0
 equipamento:
   multimedia:
     - Bluetooth

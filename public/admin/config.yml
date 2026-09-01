@@ -30,7 +30,14 @@ collections:
       - { label: Marca, name: marca, widget: string }
       - { label: Modelo, name: modelo, widget: string }
       - { label: Versão, name: versao, widget: string }
-      - { label: Ano, name: ano, widget: number, value_type: int }
+      - {
+          label: Ano,
+          name: ano,
+          widget: number,
+          value_type: int,
+          required: false,
+          hint: "Deixa vazio se não souberes ao certo — não inventes um valor.",
+        }
       - label: Estado
         name: estado
         widget: select
@@ -59,7 +66,14 @@ collections:
           hint: "Só pode haver um de cada vez — ao ativar este, desativa manualmente nos outros carros.",
         }
       - { label: "Marcar como recém-chegado?", name: recemChegado, widget: boolean, default: false }
-      - { label: Quilómetros, name: km, widget: number, value_type: int }
+      - {
+          label: Quilómetros,
+          name: km,
+          widget: number,
+          value_type: int,
+          required: false,
+          hint: "Deixa vazio se não souberes ao certo — não inventes um valor.",
+        }
       - label: Combustível
         name: combustivel
         widget: select
@@ -75,7 +89,14 @@ collections:
       - { label: Cilindrada, name: cilindrada, widget: string, required: false }
       - { label: Potência (cv), name: potencia, widget: number, value_type: int }
       - { label: Cor, name: cor, widget: string, required: false }
-      - { label: Preço (€), name: preco, widget: number, value_type: int }
+      - {
+          label: Preço (€),
+          name: preco,
+          widget: number,
+          value_type: int,
+          required: false,
+          hint: "Deixa vazio se o preço não for para divulgar — mostra \"Preço não divulgado\" no site em vez de 0€.",
+        }
       - { label: Preço anterior (€), name: precoAnterior, widget: number, value_type: int, required: false }
       - label: Equipamento
         name: equipamento

@@ -2,7 +2,6 @@
 marca: BMW
 modelo: Série 3
 versao: 320d Auto Sport Line
-ano: 0
 estado: vendido
 destaque: false
 carroDaSemana: false
@@ -14,7 +13,6 @@ carroceria: Berlina
 cilindrada: 1995 cc
 potencia: 184
 cor: ""
-preco: 0
 equipamento:
   farois:
     - Luzes diurnas LED

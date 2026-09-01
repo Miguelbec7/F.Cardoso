@@ -12,10 +12,10 @@ export function CarOfWeek({ car, whatsappNumber }: { car: Car; whatsappNumber: s
         href={`/carros/${car.slug}`}
         className="relative flex aspect-video items-center justify-center overflow-hidden rounded-2xl border border-line bg-[radial-gradient(120%_100%_at_30%_20%,#dbe4f7_0%,#eef1f6_70%)]"
       >
-        {cover ? (
-          <Image src={cover} alt={`${car.marca} ${car.modelo}`} fill className="object-cover" />
-        ) : car.video ? (
+        {car.video ? (
           <video className="h-full w-full object-cover" src={car.video} autoPlay muted loop playsInline preload="auto" />
+        ) : cover ? (
+          <Image src={cover} alt={`${car.marca} ${car.modelo}`} fill className="object-cover" />
         ) : (
           <CarSilhouette className="w-2/3 opacity-45" stroke="#7fa0ea" />
         )}
@@ -37,7 +37,7 @@ export function CarOfWeek({ car, whatsappNumber }: { car: Car; whatsappNumber: s
         </div>
         <div className="mb-5 grid grid-cols-2 gap-x-5 gap-y-2.5">
           <div className="border-t border-line pt-2 text-[0.82rem] text-ink-dim">
-            <strong className="tabular block text-[0.92rem] text-ink">{car.ano ?? "—"}</strong>Ano
+            <strong className="tabular block text-[0.92rem] text-ink">{car.ano || "—"}</strong>Ano
           </div>
           <div className="border-t border-line pt-2 text-[0.82rem] text-ink-dim">
             <strong className="tabular block text-[0.92rem] text-ink">

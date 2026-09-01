@@ -7,7 +7,6 @@ estado: vendido
 destaque: false
 carroDaSemana: false
 recemChegado: false
-km: 8
 combustivel: Diesel
 caixa: Automática
 carroceria: Berlina
