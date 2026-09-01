@@ -39,10 +39,15 @@ equipamento:
   outros:
     - 3 chaves no total
     - Porta bagageira automática
-descricao: Lexus RX 400h, SUV híbrido de luxo, único e muito dinâmico, com um conforto incrível, muito espaçoso e uma condução única. Carro nacional, sempre revisado, com livro de revisões e registo de faturas na Lexus. Revisão geral de óleo e filtros feita, kit de distribuição e bomba de água mudados. Aceita retoma e crédito automóvel.
+descricao: Lexus RX 400h, SUV híbrido de luxo, único e muito dinâmico, com um
+  conforto incrível, muito espaçoso e uma condução única. Carro nacional, sempre
+  revisado, com livro de revisões e registo de faturas na Lexus. Revisão geral
+  de óleo e filtros feita, kit de distribuição e bomba de água mudados. Aceita
+  retoma e crédito automóvel.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-09-01
-fotos: []
+fotos:
+  - /uploads/lexus-rx400.jpg
 video: ""
 ---
