@@ -49,11 +49,17 @@ equipamento:
     - Retrovisores exteriores com regulação elétrica
     - Retrovisores exteriores retráteis eletricamente
   outros:
-    - Revisão geral recente (kit distribuição, bomba de água, óleo, filtros, discos e pastilhas de travão)
-descricao: Renault Kadjar 1.5 dCi Exclusive, SUV diesel automático, económico e moderno, pensado para quem valoriza tecnologia, segurança e conforto. Ideal para famílias e condutores que procuram eficiência, espaço e um conjunto completo de equipamentos. Aceita retoma e possibilidade de facear em prestações.
+    - Revisão geral recente (kit distribuição, bomba de água, óleo, filtros,
+      discos e pastilhas de travão)
+descricao: Renault Kadjar 1.5 dCi Exclusive, SUV diesel automático, económico e
+  moderno, pensado para quem valoriza tecnologia, segurança e conforto. Ideal
+  para famílias e condutores que procuram eficiência, espaço e um conjunto
+  completo de equipamentos. Aceita retoma e possibilidade de facear em
+  prestações.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-09-01
-fotos: []
+fotos:
+  - /uploads/renault-kadjar.jpg
 video: ""
 ---
