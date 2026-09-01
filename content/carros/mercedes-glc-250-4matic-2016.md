@@ -14,6 +14,7 @@ carroceria: SUV
 cilindrada: 2143 cc
 potencia: 204
 cor: ""
+preco: 0
 equipamento:
   multimedia:
     - Bluetooth
@@ -38,10 +39,14 @@ equipamento:
     - Apoio de braço dianteiro
     - Apoio de braço traseiro
     - Vários tipos de condução, conforto, desportiva, eco
-descricao: Mercedes-Benz GLC 250 4Matic, SUV com livro de revisões tudo em dia e caixa automática 9G-Tronic. Uma verdadeira máquina, com uma condução super agradável e única, muito silencioso, muito dinâmico para um SUV, muito confortável, espaçoso e estável. Aceita retoma e possibilidade de prestações.
+descricao: Mercedes-Benz GLC 250 4Matic, SUV com livro de revisões tudo em dia e
+  caixa automática 9G-Tronic. Uma verdadeira máquina, com uma condução super
+  agradável e única, muito silencioso, muito dinâmico para um SUV, muito
+  confortável, espaçoso e estável. Aceita retoma e possibilidade de prestações.
 garantia: Garantia por mútuo acordo
 localizacao: Elvas
 criadoEm: 2026-09-01
-fotos: []
+fotos:
+  - /uploads/mercedes-top.jpg
 video: ""
 ---
