@@ -35,14 +35,19 @@ equipamento:
     - Volante multifunções
   outros:
     - 7 lugares
-    - Correia de distribuição e bomba de água substituídas há cerca de 1 ano (aos 200.000 km)
+    - Correia de distribuição e bomba de água substituídas há cerca de 1 ano
+      (aos 200.000 km)
     - 4 pneus novos
     - Revisão completa efetuada
     - Inspeção periódica válida até julho de 2027
-descricao: Citroën C4 Grand Picasso Exclusive, monovolume familiar de 7 lugares em bom estado geral, muito estimado, confortável e económico. Pronto a circular, sem necessidade de qualquer investimento. Aceita retoma e possibilidade de financiamento.
+descricao: Citroën C4 Grand Picasso Exclusive, monovolume familiar de 7 lugares
+  em bom estado geral, muito estimado, confortável e económico. Pronto a
+  circular, sem necessidade de qualquer investimento. Aceita retoma e
+  possibilidade de financiamento.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-08-30
-fotos: []
+fotos:
+  - /uploads/picassa.jpg
 video: ""
 ---
