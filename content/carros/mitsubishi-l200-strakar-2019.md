@@ -35,10 +35,13 @@ equipamento:
   outros:
     - Versão comercial de 3 lugares
     - IVA dedutível para empresas
-descricao: Mitsubishi L200 Strakar, pick-up nacional que alia força, fiabilidade e conforto, ideal para trabalho diário e também para lazer. Revisão geral efetuada, pronta a entregar. Aceita retoma e possibilidade de financiamento.
+descricao: Mitsubishi L200 Strakar, pick-up nacional que alia força, fiabilidade
+  e conforto, ideal para trabalho diário e também para lazer. Revisão geral
+  efetuada, pronta a entregar. Aceita retoma e possibilidade de financiamento.
 garantia: Garantia incluída por mútuo acordo
 localizacao: Elvas
 criadoEm: 2026-08-30
-fotos: []
+fotos:
+  - /uploads/mitsubishi-l200.jpg
 video: ""
 ---
