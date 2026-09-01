@@ -40,10 +40,14 @@ equipamento:
   outros:
     - Retrovisores aquecidos
     - Indicador de mudança de velocidade (Eco Shift)
-descricao: Skoda Octavia GreenLine, carrinha familiar robusta, económica e muito prática, ideal para o dia a dia e viagens em família. Revisão geral efetuada, em perfeitas condições gerais e pronta para entrega imediata. Possibilidade de facilitar o pagamento e aceita retoma.
+descricao: Skoda Octavia GreenLine, carrinha familiar robusta, económica e muito
+  prática, ideal para o dia a dia e viagens em família. Revisão geral efetuada,
+  em perfeitas condições gerais e pronta para entrega imediata. Possibilidade de
+  facilitar o pagamento e aceita retoma.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-08-30
-fotos: []
+fotos:
+  - /uploads/skoda-otavia.jpg
 video: ""
 ---
