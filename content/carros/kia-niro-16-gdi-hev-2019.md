@@ -47,10 +47,14 @@ equipamento:
     - Desembaçador dos espelhos retrovisores
     - Antirreflexo solar nos espelhos retrovisores
     - AEB — Travagem Autónoma de Emergência
-descricao: Kia Niro 1.6 GDi HEV Urban, mini SUV nacional com todos os manuais de origem, muito económico, com uma condução única super agradável, fácil de manobrar, espaçoso e confortável. Revisão geral feita, travões novos, velas substituídas e 4 pneus Michelin novos. Aceita retoma e crédito automóvel.
+descricao: Kia Niro 1.6 GDi HEV Urban, mini SUV nacional com todos os manuais de
+  origem, muito económico, com uma condução única super agradável, fácil de
+  manobrar, espaçoso e confortável. Revisão geral feita, travões novos, velas
+  substituídas e 4 pneus Michelin novos. Aceita retoma e crédito automóvel.
 garantia: Garantia por mútuo acordo
 localizacao: Elvas
 criadoEm: 2026-09-01
-fotos: []
+fotos:
+  - /uploads/kia-niro.jpg
 video: ""
 ---
