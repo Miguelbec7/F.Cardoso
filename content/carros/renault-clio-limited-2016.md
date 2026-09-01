@@ -33,10 +33,13 @@ equipamento:
     - Óleo e filtros mudados
     - Kit de distribuição e bomba de água substituídos
     - 4 pneus novos
-descricao: Renault Clio Limited nacional, versão bem equipada e em excelente estado geral. Muito económico, ideal para o dia a dia, pronto para entrega imediata. Aceita retoma e possibilidade de financiamento.
+descricao: Renault Clio Limited nacional, versão bem equipada e em excelente
+  estado geral. Muito económico, ideal para o dia a dia, pronto para entrega
+  imediata. Aceita retoma e possibilidade de financiamento.
 garantia: Garantia por mútuo acordo
 localizacao: Elvas
 criadoEm: 2026-08-30
-fotos: []
+fotos:
+  - /uploads/renault-clio.jpg
 video: ""
 ---
