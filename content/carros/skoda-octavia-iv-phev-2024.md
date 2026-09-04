@@ -14,7 +14,6 @@ carroceria: Berlina
 cilindrada: 1395 cc
 potencia: 204
 cor: ""
-preco: 22900
 equipamento:
   multimedia:
     - Digital Cockpit
