@@ -34,6 +34,16 @@ descricao: Renault Mégane Break 1.5 dCi 110cv, caixa manual de 6 velocidades,
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-09-05
-fotos: []
+fotos:
+  - /uploads/img_3941.jpg
+  - /uploads/img_3942.jpg
+  - /uploads/img_3943.jpg
+  - /uploads/img_3944.jpg
+  - /uploads/img_3945.jpg
+  - /uploads/img_3946.jpg
+  - /uploads/img_3947.jpg
+  - /uploads/img_3948.jpg
+  - /uploads/img_3972.jpg
+  - /uploads/img_3976.jpg
 video: ""
 ---
