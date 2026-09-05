@@ -54,8 +54,7 @@ equipamento:
 descricao: Renault Kadjar 1.5 dCi Exclusive, SUV diesel automático, económico e
   moderno, pensado para quem valoriza tecnologia, segurança e conforto. Ideal
   para famílias e condutores que procuram eficiência, espaço e um conjunto
-  completo de equipamentos. Aceita retoma e possibilidade de facear em
-  prestações.
+  completo de equipamentos. Aceita retoma e possibilidade de prestações.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-09-01

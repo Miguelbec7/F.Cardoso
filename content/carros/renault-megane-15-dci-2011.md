@@ -40,7 +40,7 @@ descricao: >-
 
 
   Uma excelente oportunidade para quem procura uma carrinha fiável, económica
-  e bem equipada. Aceita retoma e possibilidade de facear em prestações.
+  e bem equipada. Aceita retoma e possibilidade de prestações.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-09-05
