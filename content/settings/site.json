@@ -57,23 +57,23 @@
     },
     {
       "marca": "Kia",
-      "logo": "https://www.designyourway.net/blog/wp-content/uploads/2023/06/Logo-1-2.jpg"
+      "logo": "/uploads/kia-768x432.png"
     },
     {
       "marca": "Skoda",
-      "logo": "https://tse1.mm.bing.net/th/id/OIP.nRMpBPBLCtTcTLfXQI0xXwHaI4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+      "logo": "/uploads/skoda-logo.png"
     },
     {
       "marca": "Mitsubishi",
-      "logo": "https://logos-world.net/wp-content/uploads/2021/09/Mitsubishi-Logo.png"
+      "logo": "/uploads/mitsubishi-logo.webp"
     },
     {
       "marca": "Peugeot",
-      "logo": "https://fabrikbrands.com/wp-content/uploads/Peugeot-Logo-1.png"
+      "logo": "/uploads/pegeout-logo.png"
     },
     {
       "marca": "Renault",
-      "logo": "https://th.bing.com/th/id/R.b6347c2a2672cdc8914825615cf818bf?rik=Hchg4m1HRmSauQ&pid=ImgRaw&r=0"
+      "logo": "/uploads/logo-renault.png"
     }
   ]
 }
