@@ -11,6 +11,7 @@ km: 154000
 combustivel: Diesel
 caixa: Manual
 carroceria: Break
+cilindrada: 1500 cc
 potencia: 110
 cor: ""
 preco: 8250
