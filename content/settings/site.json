@@ -57,23 +57,23 @@
     },
     {
       "marca": "Kia",
-      "logo": "/uploads/kia-768x432.png"
+      "logo": "https://static.wixstatic.com/media/f2bf43_8a25cd1971634bb2926fbc2c366af06e~mv2.png"
     },
     {
       "marca": "Skoda",
-      "logo": "/uploads/skoda-logo.png"
+      "logo": "https://th.bing.com/th/id/R.dbca6faa76d2e1cc9059cb834a64e7d6?rik=xnxWpzNuFYZN0g&pid=ImgRaw&r=0"
     },
     {
       "marca": "Mitsubishi",
-      "logo": "/uploads/mitsubishi-logo.webp"
+      "logo": "https://w7.pngwing.com/pngs/349/739/png-transparent-mitsubishi-motors-car-mitsubishi-challenger-logo-car-angle-text-transport.png"
     },
     {
       "marca": "Peugeot",
-      "logo": "/uploads/pegeout-logo.png"
+      "logo": "https://seeklogo.com/images/P/peugeot-logo-660EC9A8CA-seeklogo.com.png"
     },
     {
       "marca": "Renault",
-      "logo": "/uploads/logo-renault.png"
+      "logo": "https://tse2.mm.bing.net/th/id/OIP.ZUjJS6-ouuGXCMRIC_4OAgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
     }
   ]
 }
