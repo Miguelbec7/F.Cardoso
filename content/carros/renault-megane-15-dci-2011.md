@@ -29,18 +29,15 @@ equipamento:
     - Pneus novos
 descricao: >-
   Renault Mégane Break 1.5 dCi 110cv, caixa manual de 6 velocidades, em
-  excelente estado geral, muito bem estimada e com uma manutenção cuidada.
-  Uma viatura económica, confortável e prática, ideal tanto para utilização
-  diária como para viagens.
+  excelente estado geral, muito bem estimada e com uma manutenção cuidada. Uma
+  viatura económica, confortável e prática, ideal tanto para utilização diária
+  como para viagens.
 
 
-  Conta com revisão geral recentemente efetuada, kit de distribuição
-  substituído e pneus novos, permitindo ao próximo proprietário usufruir da
-  viatura com maior tranquilidade e segurança.
+  Conta com revisão geral recentemente efetuada, kit de distribuição substituído e pneus novos, permitindo ao próximo proprietário usufruir da viatura com maior tranquilidade e segurança.
 
 
-  Uma excelente oportunidade para quem procura uma carrinha fiável, económica
-  e bem equipada. Aceita retoma e possibilidade de prestações.
+  Uma excelente oportunidade para quem procura uma carrinha fiável, económica e bem equipada. Aceita retoma e possibilidade de prestações.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-09-05
@@ -55,5 +52,5 @@ fotos:
   - /uploads/img_3948.jpg
   - /uploads/img_3972.jpg
   - /uploads/img_3976.jpg
-video: ""
+video: /uploads/megane-video.mp4
 ---
