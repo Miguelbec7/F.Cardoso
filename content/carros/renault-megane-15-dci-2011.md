@@ -52,5 +52,5 @@ fotos:
   - /uploads/img_3948.jpg
   - /uploads/img_3972.jpg
   - /uploads/img_3976.jpg
-video: /uploads/megane-video.mp4
+video: /uploads/0905-1-.mp4
 ---
