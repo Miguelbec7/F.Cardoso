@@ -29,10 +29,10 @@ export function BrandStrip({
                 key={brand}
                 href={`/carros?marca=${encodeURIComponent(brand)}`}
                 aria-label={brand}
-                className="flex shrink-0 items-center justify-center rounded-xl border border-line bg-canvas-soft px-5 py-3 text-[0.8rem] font-bold text-ink-dim transition hover:border-brand-bright hover:text-brand"
+                className="flex shrink-0 items-center justify-center rounded-xl border border-line bg-canvas-soft px-6 py-2.5 text-[0.8rem] font-bold text-ink-dim transition hover:border-brand-bright hover:text-brand"
               >
                 {logo ? (
-                  <span className="relative block h-6 w-20">
+                  <span className="relative block h-10 w-28">
                     <Image src={logo} alt={brand} fill className="object-contain" />
                   </span>
                 ) : (
