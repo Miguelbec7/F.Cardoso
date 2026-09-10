@@ -17,23 +17,23 @@ export function CarCard({ car }: { car: Car }) {
       className="block h-full w-full overflow-hidden rounded-card border border-line bg-surface transition hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(20,24,34,0.08)]"
     >
       <div className={`relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-linear-to-br from-surface-2 to-canvas-soft ${isSold ? "grayscale-[0.5] brightness-90" : ""}`}>
-        {isNew && (
-          <span className="absolute top-2.5 left-2.5 rounded-full border border-brand-bright/30 bg-white/90 px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-brand-bright uppercase">
-            {car.recemChegado ? "Recém-chegado" : "Novo"}
-          </span>
-        )}
-        {isSold && (
-          <span className="absolute top-2.5 left-2.5 rounded-full bg-ink px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-white uppercase">
+        {isSold ? (
+          <span className="absolute top-2.5 left-2.5 z-10 rounded-full bg-ink px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-white uppercase">
             Vendido
           </span>
-        )}
-        {isReserved && (
-          <span className="absolute top-2.5 left-2.5 rounded-full bg-[#b8791a] px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-white uppercase">
+        ) : isReserved ? (
+          <span className="absolute top-2.5 left-2.5 z-10 rounded-full bg-[#b8791a] px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-white uppercase">
             Reservado
           </span>
+        ) : (
+          isNew && (
+            <span className="absolute top-2.5 left-2.5 z-10 rounded-full border border-brand-bright/30 bg-white/90 px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-brand-bright uppercase">
+              {car.recemChegado ? "Recém-chegado" : "Novo"}
+            </span>
+          )
         )}
         {hasPriceDrop && (
-          <span className="absolute top-2.5 right-2.5 rounded-full border border-[#1a9c5b]/30 bg-white/90 px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-[#1a9c5b] uppercase">
+          <span className="absolute top-2.5 right-2.5 z-10 rounded-full border border-[#1a9c5b]/30 bg-white/90 px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-[#1a9c5b] uppercase">
             Preço reduzido
           </span>
         )}
