@@ -6,7 +6,7 @@ ano: 2018
 estado: disponivel
 destaque: true
 carroDaSemana: false
-recemChegado: true
+recemChegado: false
 km: 173000
 combustivel: Diesel
 caixa: Manual
