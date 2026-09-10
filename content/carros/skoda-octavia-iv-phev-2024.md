@@ -3,7 +3,7 @@ marca: Skoda
 modelo: Octavia
 versao: iV 1.4 TSI Plug-in Hybrid DSG
 ano: 2024
-estado: disponivel
+estado: reservado
 destaque: true
 carroDaSemana: false
 recemChegado: true
