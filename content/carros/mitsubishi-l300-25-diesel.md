@@ -6,7 +6,7 @@ ano: 0
 estado: disponivel
 destaque: false
 carroDaSemana: false
-recemChegado: true
+recemChegado: false
 km: 0
 combustivel: Diesel
 caixa: Manual
