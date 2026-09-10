@@ -6,7 +6,7 @@ ano: 2019
 estado: disponivel
 destaque: true
 carroDaSemana: false
-recemChegado: true
+recemChegado: false
 km: 93800
 combustivel: Diesel
 caixa: Manual
