@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Car } from "@/lib/car-utils";
-import { formatKm, formatPrice, isCarNew } from "@/lib/car-utils";
+import { formatKm, formatPrice } from "@/lib/car-utils";
 import { CarSilhouette } from "./icons";
 
 export function CarCard({ car }: { car: Car }) {
   const isSold = car.estado === "vendido";
   const isReserved = car.estado === "reservado";
-  const isNew = isCarNew(car);
+  const isNew = !isSold && !isReserved && car.recemChegado;
   const hasPriceDrop = !isSold && !!car.precoAnterior && car.preco != null && car.precoAnterior > car.preco;
   const cover = car.fotos[0];
 
@@ -28,7 +28,7 @@ export function CarCard({ car }: { car: Car }) {
         ) : (
           isNew && (
             <span className="absolute top-2.5 left-2.5 z-10 rounded-full border border-brand-bright/30 bg-white/90 px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-brand-bright uppercase">
-              {car.recemChegado ? "Recém-chegado" : "Novo"}
+              Recém-chegado
             </span>
           )
         )}
