@@ -55,6 +55,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
 
   const { whatsappNumber } = getSiteSettings();
   const isSold = car.estado === "vendido";
+  const isReserved = car.estado === "reservado";
   const similar = getSimilarCars(car);
 
   const jsonLd = {
@@ -74,7 +75,11 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
       "@type": "Offer",
       ...(car.preco != null ? { price: car.preco } : {}),
       priceCurrency: "EUR",
-      availability: isSold ? "https://schema.org/SoldOut" : "https://schema.org/InStock",
+      availability: isSold
+        ? "https://schema.org/SoldOut"
+        : isReserved
+          ? "https://schema.org/Reserved"
+          : "https://schema.org/InStock",
     },
   };
 
@@ -99,6 +104,10 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
               isSold ? (
                 <span className="absolute top-3 left-3 z-10 rounded-full bg-ink px-3 py-1.5 text-[0.68rem] font-extrabold tracking-wide text-white uppercase">
                   Vendido
+                </span>
+              ) : isReserved ? (
+                <span className="absolute top-3 left-3 z-10 rounded-full bg-[#b8791a] px-3 py-1.5 text-[0.68rem] font-extrabold tracking-wide text-white uppercase">
+                  Reservado
                 </span>
               ) : undefined
             }
@@ -150,6 +159,12 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
               </div>
             ))}
           </dl>
+
+          {isReserved && (
+            <p className="mt-6 rounded-card border border-[#b8791a]/30 bg-[#b8791a]/10 p-3 text-[0.85rem] font-semibold text-[#b8791a]">
+              Esta viatura está reservada. Contacte-nos caso queira ficar em lista de espera.
+            </p>
+          )}
 
           {!isSold ? (
             <div className="mt-7 flex flex-col gap-2.5">

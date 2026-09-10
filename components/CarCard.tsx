@@ -6,6 +6,7 @@ import { CarSilhouette } from "./icons";
 
 export function CarCard({ car }: { car: Car }) {
   const isSold = car.estado === "vendido";
+  const isReserved = car.estado === "reservado";
   const isNew = isCarNew(car);
   const hasPriceDrop = !isSold && !!car.precoAnterior && car.preco != null && car.precoAnterior > car.preco;
   const cover = car.fotos[0];
@@ -24,6 +25,11 @@ export function CarCard({ car }: { car: Car }) {
         {isSold && (
           <span className="absolute top-2.5 left-2.5 rounded-full bg-ink px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-white uppercase">
             Vendido
+          </span>
+        )}
+        {isReserved && (
+          <span className="absolute top-2.5 left-2.5 rounded-full bg-[#b8791a] px-2.5 py-1 text-[0.62rem] font-extrabold tracking-wide text-white uppercase">
+            Reservado
           </span>
         )}
         {hasPriceDrop && (
