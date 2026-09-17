@@ -43,5 +43,5 @@ fotos:
   - /uploads/img_4046.jpg
   - /uploads/img_4047.jpg
   - /uploads/img_4048.jpg
-video: /uploads/audi.mov
+video: ""
 ---
