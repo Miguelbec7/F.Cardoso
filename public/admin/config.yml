@@ -286,7 +286,13 @@ collections:
         widget: list
         field: { label: Foto, name: image, widget: image }
         required: false
-      - { label: Vídeo (opcional), name: video, widget: file, required: false }
+      - {
+          label: Vídeo (opcional),
+          name: video,
+          widget: file,
+          required: false,
+          hint: "Máximo 25 MB — ficheiros maiores fazem o site parar de publicar (falha o deploy) sem aviso aqui no admin. Se o vídeo do telemóvel for maior, comprime primeiro (ex: envia-o para ti mesmo pelo WhatsApp, que comprime automaticamente).",
+        }
 
   - name: testemunhos
     label: Testemunhos
