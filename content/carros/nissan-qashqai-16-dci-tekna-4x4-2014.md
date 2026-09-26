@@ -21,6 +21,8 @@ equipamento:
     - Bancos aquecidos
   seguranca:
     - Câmara de marcha atrás
+    - Sensores de estacionamento
+    - Sensor de estacionamento dianteiro
   exterior:
     - Tração integral
   geral:
