@@ -52,5 +52,5 @@ fotos:
   - /uploads/img_0054.jpg
   - /uploads/img_0065.jpg
   - /uploads/img_0043.jpg
-video: /uploads/squareqasqai.mov
+video: /uploads/qashqai.mp4
 ---
