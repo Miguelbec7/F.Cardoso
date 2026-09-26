@@ -52,5 +52,5 @@ fotos:
   - /uploads/img_0054.jpg
   - /uploads/img_0065.jpg
   - /uploads/img_0043.jpg
-video: ""
+video: /uploads/qas.mp4
 ---
