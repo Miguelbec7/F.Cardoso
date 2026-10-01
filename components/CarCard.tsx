@@ -58,7 +58,7 @@ export function CarCard({ car }: { car: Car }) {
             {car.km != null && <span className="tabular">{formatKm(car.km)}</span>}
             <span>{car.combustivel}</span>
             <span>{car.caixa}</span>
-            <span className="tabular">{car.potencia} cv</span>
+            {car.potencia != null && <span className="tabular">{car.potencia} cv</span>}
           </div>
         )}
 

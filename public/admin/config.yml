@@ -87,7 +87,14 @@ collections:
         widget: select
         options: [Berlina, Break, SUV, Hatchback, Coupé, Comercial, Monovolume]
       - { label: Cilindrada, name: cilindrada, widget: string, required: false }
-      - { label: Potência (cv), name: potencia, widget: number, value_type: int }
+      - {
+          label: Potência (cv),
+          name: potencia,
+          widget: number,
+          value_type: int,
+          required: false,
+          hint: "Deixa vazio se não souberes ao certo — não inventes um valor.",
+        }
       - { label: Cor, name: cor, widget: string, required: false }
       - {
           label: Preço (€),

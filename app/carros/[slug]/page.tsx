@@ -145,7 +145,7 @@ export default async function CarDetailPage({ params }: { params: Promise<{ slug
               ["Combustível", car.combustivel],
               ["Caixa", car.caixa],
               ["Cilindrada", car.cilindrada],
-              ["Potência", `${car.potencia} cv`],
+              ["Potência", car.potencia != null ? `${car.potencia} cv` : ""],
               ["Cor", car.cor],
               ["Carroçaria", car.carroceria],
               ["Garantia", car.garantia],

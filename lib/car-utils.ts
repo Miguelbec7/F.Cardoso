@@ -47,7 +47,8 @@ export type Car = {
   caixa: Transmission;
   carroceria: BodyType;
   cilindrada: string;
-  potencia: number;
+  /** Em falta quando ainda não confirmado com o vendedor — nunca inventar um valor. */
+  potencia?: number;
   cor: string;
   /** Em falta quando o valor de venda não foi divulgado (ex.: anúncios antigos já vendidos) — nunca inventar um valor. */
   preco?: number;
