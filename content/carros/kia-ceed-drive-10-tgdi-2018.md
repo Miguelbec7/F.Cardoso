@@ -29,16 +29,22 @@ equipamento:
   outros:
     - Histórico de revisões, com comprovativos
 descricao: >-
-  Kia Ceed Drive 1.0 T-GDi de 2018, nacional, com 118 000 km. Versão Drive,
-  bem equipada, com vidros escurecidos e jantes especiais. Motor turbo a
-  gasolina, económico para o dia a dia, com histórico de revisões e
-  comprovativos.
+  Kia Ceed Drive 1.0 T-GDi de 2018, nacional, com 118 000 km. Versão Drive, bem
+  equipada, com vidros escurecidos e jantes especiais. Motor turbo a gasolina,
+  económico para o dia a dia, com histórico de revisões e comprovativos.
 
 
   Aceita retoma e possibilidade de financiamento.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-10-01
-fotos: []
+fotos:
+  - /uploads/img_0109.jpg
+  - /uploads/img_0111.jpg
+  - /uploads/img_0112.jpg
+  - /uploads/img_0113.jpg
+  - /uploads/img_0114.jpg
+  - /uploads/img_0115.jpg
+  - /uploads/img_0116.jpg
 video: ""
 ---
