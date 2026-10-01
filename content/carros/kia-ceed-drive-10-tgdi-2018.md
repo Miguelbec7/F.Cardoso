@@ -12,6 +12,7 @@ combustivel: Gasolina
 caixa: Manual
 carroceria: Hatchback
 cilindrada: 998 cc
+potencia: 120
 cor: ""
 preco: 12700
 equipamento:
