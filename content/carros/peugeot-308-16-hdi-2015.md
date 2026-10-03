@@ -3,7 +3,8 @@ marca: Peugeot
 modelo: "308"
 versao: 1.6 HDi
 ano: 2015
-estado: disponivel
+estado: vendido
+vendidoEm: 2026-10-03
 destaque: false
 carroDaSemana: false
 recemChegado: true
