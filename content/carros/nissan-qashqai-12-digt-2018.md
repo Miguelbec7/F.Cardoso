@@ -29,15 +29,22 @@ equipamento:
   outros:
     - Histórico de revisões
 descricao: >-
-  Nissan Qashqai 1.2 DIG-T de 2018, nacional, com apenas 86 000 km. Motor
-  turbo a gasolina, económico para o dia a dia, bem equipado, com histórico
-  de revisões e 12 meses de garantia mecânica incluída.
+  Nissan Qashqai 1.2 DIG-T de 2018, nacional, com apenas 86 000 km. Motor turbo
+  a gasolina, económico para o dia a dia, bem equipado, com histórico de
+  revisões e 12 meses de garantia mecânica incluída.
 
 
   Aceita retoma e possibilidade de financiamento.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-10-07
-fotos: []
+fotos:
+  - /uploads/img_0172.jpg
+  - /uploads/img_0173.jpg
+  - /uploads/img_0174.jpg
+  - /uploads/img_0175.jpg
+  - /uploads/img_0177.jpg
+  - /uploads/img_0178.jpg
+  - /uploads/img_0179.jpg
 video: ""
 ---
