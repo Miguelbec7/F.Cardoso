@@ -3,7 +3,8 @@ marca: Nissan
 modelo: Qashqai
 versao: 1.6 dCi Tekna 4x4
 ano: 2014
-estado: disponivel
+estado: vendido
+vendidoEm: 2026-10-10
 destaque: true
 carroDaSemana: false
 recemChegado: true
