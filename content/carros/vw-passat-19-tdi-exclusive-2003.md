@@ -26,14 +26,21 @@ equipamento:
 descricao: >-
   Volkswagen Passat 1.9 TDI de 130 cv, de 2003, na versão Exclusive. Foi-lhe
   feita uma revisão geral e substituídos o kit de distribuição e a bomba de
-  água. Tem pneus novos, bancos em pele e jantes de liga, com caixa manual
-  de 6 velocidades. Está pronto a circular.
+  água. Tem pneus novos, bancos em pele e jantes de liga, com caixa manual de 6
+  velocidades. Está pronto a circular.
 
 
   Aceita retoma e possibilidade de financiamento.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-10-16
-fotos: []
+fotos:
+  - /uploads/img_0284.jpg
+  - /uploads/img_0285.jpg
+  - /uploads/img_0287.jpg
+  - /uploads/img_0288.jpg
+  - /uploads/img_0292.jpg
+  - /uploads/img_0289.jpg
+  - /uploads/img_0291.jpg
 video: ""
 ---
