@@ -4,7 +4,7 @@ modelo: Qashqai
 versao: 1.3 DIG-T N-Connecta
 ano: 2023
 estado: disponivel
-destaque: false
+destaque: true
 carroDaSemana: false
 recemChegado: true
 km: 30000
