@@ -3,7 +3,8 @@ marca: Kia
 modelo: XCeed
 versao: 1.6 GDi PHEV
 ano: 2023
-estado: reservado
+estado: vendido
+vendidoEm: 2026-10-21
 destaque: true
 carroDaSemana: false
 recemChegado: true
