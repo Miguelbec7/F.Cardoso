@@ -3,7 +3,8 @@ marca: Kia
 modelo: Ceed
 versao: Drive 1.0 T-GDi
 ano: 2018
-estado: disponivel
+estado: vendido
+vendidoEm: 2026-10-21
 destaque: false
 carroDaSemana: false
 recemChegado: true
