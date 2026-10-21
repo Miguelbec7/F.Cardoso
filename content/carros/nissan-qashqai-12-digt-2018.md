@@ -4,7 +4,7 @@ modelo: Qashqai
 versao: 1.2 DIG-T
 ano: 2018
 estado: disponivel
-destaque: false
+destaque: true
 carroDaSemana: false
 recemChegado: true
 km: 86000
