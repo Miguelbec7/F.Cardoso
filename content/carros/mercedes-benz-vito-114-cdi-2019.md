@@ -3,9 +3,9 @@ marca: Mercedes-Benz
 modelo: Vito
 versao: 114 CDI
 ano: 2019
-estado: disponivel
+estado: reservado
 destaque: false
-carroDaSemana: true
+carroDaSemana: false
 recemChegado: false
 km: 78500
 combustivel: Diesel
@@ -14,7 +14,6 @@ carroceria: Comercial
 cilindrada: 2143 cc
 potencia: 136
 cor: Branco
-preco: 29900
 equipamento:
   seguranca:
     - Câmara de marcha atrás
