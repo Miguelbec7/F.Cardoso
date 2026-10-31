@@ -3,7 +3,7 @@ marca: Audi
 modelo: A1
 versao: 1.4 TDI
 ano: 2015
-estado: disponivel
+estado: vendido
 destaque: true
 carroDaSemana: false
 recemChegado: true
