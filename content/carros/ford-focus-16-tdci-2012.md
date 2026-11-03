@@ -8,7 +8,7 @@ destaque: false
 carroDaSemana: false
 recemChegado: true
 combustivel: Diesel
-caixa: Automática
+caixa: Manual
 carroceria: Hatchback
 cilindrada: 1560 cc
 potencia: 110
