@@ -26,7 +26,7 @@ descricao: >-
 
 
   Aceita retoma e possibilidade de financiamento.
-garantia: 12 meses de garantia mecânica
+garantia: Garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-11-04
 fotos:
