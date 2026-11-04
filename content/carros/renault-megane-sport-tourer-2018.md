@@ -4,6 +4,7 @@ modelo: Mégane
 versao: Sport Tourer 1.5 dCi
 ano: 2018
 estado: disponivel
+vendidoEm: 2026-11-04
 destaque: true
 carroDaSemana: false
 recemChegado: false
