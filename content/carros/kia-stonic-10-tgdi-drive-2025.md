@@ -26,16 +26,23 @@ equipamento:
     - Garantia de fábrica Kia até 11/2032 ou 150.000 km
 descricao: >-
   Kia Stonic 1.0 T-GDi Drive de 100 cv, matriculado em novembro de 2025,
-  nacional e muito bem equipado. É um carro semi-novo, com apenas 36 000
-  km, que junta um ótimo motor turbo a consumos muito baixos. Um mini SUV
-  urbano, prático e fácil de conduzir, ainda com garantia de fábrica até
-  2032.
+  nacional e muito bem equipado. É um carro semi-novo, com apenas 36 000 km, que
+  junta um ótimo motor turbo a consumos muito baixos. Um mini SUV urbano,
+  prático e fácil de conduzir, ainda com garantia de fábrica até 2032.
 
 
   Aceita retoma e possibilidade de financiamento.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-11-07
-fotos: []
+fotos:
+  - /uploads/img_0481.jpg
+  - /uploads/img_0483.jpg
+  - /uploads/img_0488.jpg
+  - /uploads/img_0489.jpg
+  - /uploads/img_0486.jpg
+  - /uploads/img_0484.jpg
+  - /uploads/img_0487.jpg
+  - /uploads/img_0485.jpg
 video: ""
 ---
