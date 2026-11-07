@@ -25,16 +25,23 @@ equipamento:
     - Histórico de revisões
     - Todo de origem, sem alterações
 descricao: >-
-  Audi TT 1.8 turbo de 180 cv, de 2001, na versão S-Line e todo de origem,
-  sem qualquer alteração. Conta com 150 000 km, histórico de revisões, kit
-  de distribuição substituído e 4 pneus novos. Vem com as 2 chaves e está
-  pronto a circular.
+  Audi TT 1.8 turbo de 180 cv, de 2001, na versão S-Line e todo de origem, sem
+  qualquer alteração. Conta com 150 000 km, histórico de revisões, kit de
+  distribuição substituído e 4 pneus novos. Vem com as 2 chaves e está pronto a
+  circular.
 
 
   Aceita retoma e possibilidade de financiamento.
 garantia: 12 meses de garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-11-07
-fotos: []
+fotos:
+  - /uploads/img_0465.jpg
+  - /uploads/img_0466.jpg
+  - /uploads/img_0467.jpg
+  - /uploads/img_0468.jpg
+  - /uploads/img_0469.jpg
+  - /uploads/img_0471.jpg
+  - /uploads/img_0470.jpg
 video: ""
 ---
