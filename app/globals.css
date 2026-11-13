@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @theme {
   /* Corpo do site — claro, premium, alinhado com o azul/cinzento do logótipo real */
@@ -27,6 +28,18 @@
   --font-mono: ui-monospace, "SF Mono", "Roboto Mono", Menlo, monospace;
 
   --radius-card: 14px;
+}
+
+/* Tokens estilo shadcn/ui, mapeados para a paleta existente.
+   --color-muted não é redefinido: o site já o usa como cor de texto. */
+@theme inline {
+  --color-background: var(--color-canvas);
+  --color-foreground: var(--color-ink);
+  --color-muted-foreground: var(--color-muted);
+  --color-card: var(--color-surface);
+  --color-card-foreground: var(--color-ink);
+  --color-border: var(--color-line);
+  --color-ring: var(--color-brand-bright);
 }
 
 html {
