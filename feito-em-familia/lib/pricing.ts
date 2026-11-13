@@ -10,6 +10,8 @@ export type Piece = {
   group?: [number, number];
   kid?: boolean;
   mug?: boolean;
+  /** Peça de preço fixo, sem extras (presentes). */
+  flat?: boolean;
   /** Texto mostrado na tabela de bebé/criança. */
   show?: string;
   photo?: string;
@@ -37,6 +39,49 @@ export const MUGS: Piece[] = [
   { id: "m-design", name: "Caneca com design completo", prices: [11.9], mug: true },
 ];
 
+export const PRESENTS: Piece[] = [
+  { id: "g-magica", name: "Caneca mágica", note: "Sujeita a stock", prices: [14.9], flat: true },
+  { id: "g-chaves", name: "Porta-chaves com foto", prices: [4.9], flat: true },
+  { id: "g-placa1", name: "Placa de alumínio 15×20 cm", note: "Com foto", prices: [12.9], flat: true },
+  { id: "g-placa2", name: "Placa de alumínio 20×25 cm", note: "Com foto", prices: [17.9], flat: true },
+  { id: "g-combo", name: "Caneca + porta-chaves", note: "Com a mesma foto", prices: [12.9], flat: true },
+];
+
+export type ShelfItem = {
+  id: string;
+  name: string;
+  note?: string;
+  price: string;
+  kind: "mug" | "magic" | "keychain" | "plate" | "combo";
+  art?: "nome" | "foto" | "design";
+  color: string;
+  /** Fotografia real do produto (recorte transparente). Substitui a ilustração. */
+  image?: string;
+  /** id da peça na calculadora. */
+  pick: string;
+};
+
+export const SHELVES: { title: string; items: ShelfItem[] }[] = [
+  {
+    title: "Canecas",
+    items: [
+      { id: "m-nome", name: "Caneca com nome", price: "8,90 €", kind: "mug", art: "nome", color: "#E9E4D8", pick: "m-nome" },
+      { id: "m-foto", name: "Caneca com foto", price: "9,90 €", kind: "mug", art: "foto", color: "#F2F0EA", pick: "m-foto" },
+      { id: "m-design", name: "Caneca com design completo", price: "11,90 €", kind: "mug", art: "design", color: "#DE9C31", pick: "m-design" },
+      { id: "g-magica", name: "Caneca mágica", note: "Sujeita a stock", price: "14,90 €", kind: "magic", color: "#16181B", pick: "g-magica" },
+    ],
+  },
+  {
+    title: "Presentes",
+    items: [
+      { id: "g-chaves", name: "Porta-chaves com foto", price: "4,90 €", kind: "keychain", color: "#A3D3EB", pick: "g-chaves" },
+      { id: "g-placa1", name: "Placa de alumínio · 15×20 cm", note: "Brilhante, cores vivas", price: "12,90 €", kind: "plate", color: "#CCB2E0", pick: "g-placa1" },
+      { id: "g-placa2", name: "Placa de alumínio · 20×25 cm", note: "Brilhante, cores vivas", price: "17,90 €", kind: "plate", color: "#B05139", pick: "g-placa2" },
+      { id: "g-combo", name: "Caneca + porta-chaves", note: "Com a mesma foto", price: "12,90 €", kind: "combo", color: "#185B37", pick: "g-combo" },
+    ],
+  },
+];
+
 export const eur = (n: number) =>
   n.toLocaleString("pt-PT", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
 
@@ -45,15 +90,6 @@ export const EXTRAS = [
   { price: "+4 €", text: "Desenho extra na criança" },
   { price: "+2 €", text: "Nome nas costas ou na manga" },
   { price: "+2 €", text: "Desenho feito a partir de fotografia" },
-];
-
-export const GIFTS = [
-  { name: "Caneca com nome", price: "8,90 €" },
-  { name: "Caneca com foto", price: "9,90 €" },
-  { name: "Caneca com design completo", price: "11,90 €" },
-  { name: "Porta-chaves com foto", price: "4,90 €" },
-  { name: "Placa de alumínio com foto", note: "Brilhante, cores vivas", price: "15×20 cm · 12,90 €", price2: "20×25 cm · 17,90 €" },
-  { name: "Caneca mágica", note: "Sujeita a stock", price: "14,90 €" },
 ];
 
 export const GROUP_TABLE = [

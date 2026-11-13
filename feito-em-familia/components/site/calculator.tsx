@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { ADULT, KIDS, MUGS, SIZES, eur, type Piece } from "@/lib/pricing";
+import { ADULT, KIDS, MUGS, PRESENTS, SIZES, eur, type Piece } from "@/lib/pricing";
 import { CONTACT } from "@/lib/contact";
 
-const GROUPS: [string, Piece[]][] = [["Adulto", ADULT], ["Bebé e criança", KIDS], ["Canecas", MUGS]];
+const GROUPS: [string, Piece[]][] = [["Adulto", ADULT], ["Bebé e criança", KIDS], ["Canecas", MUGS], ["Presentes", PRESENTS]];
 const ALL = GROUPS.flatMap(([, items]) => items);
 const field = "w-full rounded-xl border border-border bg-background px-3.5 py-2.5 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-60";
 
@@ -17,10 +17,21 @@ export function Calculator() {
   const [photo, setPhoto] = React.useState(false);
   const [msg, setMsg] = React.useState("");
 
+  React.useEffect(() => {
+    const on = (e: Event) => {
+      const pick = (e as CustomEvent<string>).detail;
+      if (!ALL.some((p) => p.id === pick)) return;
+      setId(pick); setSizeIdx(0); setExtra(false); setNameX(false); setPhoto(false);
+    };
+    window.addEventListener("pick-piece", on);
+    return () => window.removeEventListener("pick-piece", on);
+  }, []);
+
   const piece = ALL.find((p) => p.id === id)!;
   const single = piece.prices.length === 1;
   const idx = single ? 0 : piece.prices[sizeIdx] != null ? sizeIdx : piece.prices.findIndex((v) => v != null);
-  const canPhoto = !piece.mug && piece.photo !== "—";
+  const noExtras = !!(piece.mug || piece.flat);
+  const canPhoto = !noExtras && piece.photo !== "—";
   const n = Math.max(1, Math.min(500, qty || 1));
 
   let unit = piece.prices[idx] ?? 0;
@@ -31,10 +42,10 @@ export function Calculator() {
     unit = piece.group[full ? 0 : 1];
     hint = full ? "Preço de grupo: frente + costas + nome." : "Preço de grupo: só frente. Marca desenho extra e nome para frente + costas + nome.";
   } else {
-    if (extra && !piece.mug) unit += piece.kid ? 4 : 5;
-    if (nameX && !piece.mug) unit += 2;
+    if (extra && !noExtras) unit += piece.kid ? 4 : 5;
+    if (nameX && !noExtras) unit += 2;
     if (photo && canPhoto) unit += 2;
-    if (n >= 10 && !piece.mug) hint = "Para 10 ou mais peças, pede-nos o preço de grupo.";
+    if (n >= 10 && !noExtras) hint = "Para 10 ou mais peças, pede-nos o preço de grupo.";
   }
   const total = unit * n;
 
@@ -42,7 +53,7 @@ export function Calculator() {
     const bits = [`Olá! Gostava de pedir: ${n}× ${piece.name}`];
     if (!single) bits.push(`desenho ${SIZES[idx].toLowerCase()}`);
     const ex = [extra && "desenho extra", nameX && "nome", photo && canPhoto && "a partir de fotografia"].filter(Boolean);
-    if (ex.length && !piece.mug) bits.push(ex.join(", "));
+    if (ex.length && !noExtras) bits.push(ex.join(", "));
     return `${bits.join(", ")}. Estimativa: ${eur(total)}.`;
   }
 
@@ -71,7 +82,7 @@ export function Calculator() {
           <input className={field} type="number" min={1} max={500} inputMode="numeric" value={qty} onChange={(e) => setQty(Number(e.target.value))} />
         </label>
       </div>
-      <fieldset disabled={!!piece.mug} className="grid gap-3 disabled:opacity-50">
+      <fieldset disabled={noExtras} className="grid gap-3 disabled:opacity-50">
         <legend className="mb-2 text-sm font-medium">Extras</legend>
         <label className={check}><input type="checkbox" className="size-4 accent-foreground" checked={extra} onChange={(e) => setExtra(e.target.checked)} /> Desenho extra (frente e costas)</label>
         <label className={check}><input type="checkbox" className="size-4 accent-foreground" checked={nameX} onChange={(e) => setNameX(e.target.checked)} /> Nome nas costas ou na manga (+2 €)</label>

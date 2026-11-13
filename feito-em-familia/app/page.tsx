@@ -2,9 +2,10 @@ import ClothingRailHero, { type RailGarment } from "@/components/ui/product-rail
 import { Header } from "@/components/site/header";
 import { Section, card } from "@/components/site/section";
 import { PriceTabs } from "@/components/site/price-tabs";
+import { ProductShelf } from "@/components/site/product-shelf";
 import { Calculator } from "@/components/site/calculator";
 import { CONTACT } from "@/lib/contact";
-import { EXTRAS, GIFTS, GROUP_TABLE, STEPS, XMAS } from "@/lib/pricing";
+import { EXTRAS, GROUP_TABLE, STEPS, XMAS } from "@/lib/pricing";
 
 const RAIL: RailGarment[] = [
   { id: "tshirt", name: "T-shirt clássica", kind: "tee", color: "#EFEBE2", tag: "11,90 €", description: "Algodão 190 g com o teu desenho, nome ou fotografia.", details: ["Algodão 190 g", "11,90 · 14,90 · 16,90 €"] },
@@ -73,17 +74,8 @@ export default function Page() {
           </ul>
         </Section>
 
-        <Section id="presentes" eyebrow="Presentes" title="Canecas e presentes" sub="Para oferecer, ou para ti.">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {GIFTS.map((g) => (
-              <article key={g.name} className={`${card} flex flex-col gap-1 p-6`}>
-                <h3 className="font-medium">{g.name}</h3>
-                {g.note && <p className="text-xs text-muted-foreground">{g.note}</p>}
-                <p className="mt-4 text-xl font-medium tabular-nums">{g.price}</p>
-                {g.price2 && <p className="text-xl font-medium tabular-nums">{g.price2}</p>}
-              </article>
-            ))}
-          </div>
+        <Section id="presentes" eyebrow="Presentes" title="Canecas e presentes" sub="Escolhe da prateleira o que queres levar.">
+          <ProductShelf />
         </Section>
 
         <Section id="packs" tint eyebrow="Promoções" title="Packs e promoções">
