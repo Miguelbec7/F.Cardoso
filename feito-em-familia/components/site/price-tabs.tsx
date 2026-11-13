@@ -13,7 +13,7 @@ export function PriceTabs() {
       <div role="tablist" aria-label="Tipo de roupa" className="mb-5 inline-flex rounded-full border border-border p-1">
         {([["adulto", "Adulto"], ["crianca", "Bebé e criança"]] as const).map(([id, label]) => (
           <button key={id} role="tab" aria-selected={tab === id} onClick={() => setTab(id)}
-            className={`rounded-full px-4 py-1.5 text-sm outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring ${tab === id ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground"}`}>
+            className={`rounded-full px-4 py-2.5 text-sm outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring ${tab === id ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground"}`}>
             {label}
           </button>
         ))}

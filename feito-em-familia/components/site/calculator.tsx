@@ -6,7 +6,7 @@ import { CONTACT } from "@/lib/contact";
 
 const GROUPS: [string, Piece[]][] = [["Adulto", ADULT], ["Bebé e criança", KIDS], ["Canecas", MUGS], ["Presentes", PRESENTS]];
 const ALL = GROUPS.flatMap(([, items]) => items);
-const field = "w-full rounded-xl border border-border bg-background px-3.5 py-2.5 text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-60";
+const field = "w-full rounded-xl border border-border bg-background px-3.5 py-3 text-base sm:py-2.5 sm:text-sm outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-60";
 
 export function Calculator() {
   const [id, setId] = React.useState("tshirt");
@@ -64,7 +64,7 @@ export function Calculator() {
     try { await navigator.clipboard.writeText(text); setMsg("Pedido copiado. Cola-o numa mensagem para nós."); } catch { setMsg(text); }
   }
 
-  const check = "flex items-center gap-3 text-sm";
+  const check = "flex items-center gap-3 py-1.5 text-sm";
   return (
     <form onSubmit={submit} className="grid gap-5 rounded-2xl border border-border bg-card p-6 sm:p-8">
       <label className="grid gap-1.5 text-sm font-medium">Peça
@@ -84,15 +84,15 @@ export function Calculator() {
       </div>
       <fieldset disabled={noExtras} className="grid gap-3 disabled:opacity-50">
         <legend className="mb-2 text-sm font-medium">Extras</legend>
-        <label className={check}><input type="checkbox" className="size-4 accent-foreground" checked={extra} onChange={(e) => setExtra(e.target.checked)} /> Desenho extra (frente e costas)</label>
-        <label className={check}><input type="checkbox" className="size-4 accent-foreground" checked={nameX} onChange={(e) => setNameX(e.target.checked)} /> Nome nas costas ou na manga (+2 €)</label>
-        <label className={check}><input type="checkbox" className="size-4 accent-foreground" disabled={!canPhoto} checked={photo && canPhoto} onChange={(e) => setPhoto(e.target.checked)} /> Desenho feito a partir de fotografia (+2 €)</label>
+        <label className={check}><input type="checkbox" className="size-5 accent-foreground" checked={extra} onChange={(e) => setExtra(e.target.checked)} /> Desenho extra (frente e costas)</label>
+        <label className={check}><input type="checkbox" className="size-5 accent-foreground" checked={nameX} onChange={(e) => setNameX(e.target.checked)} /> Nome nas costas ou na manga (+2 €)</label>
+        <label className={check}><input type="checkbox" className="size-5 accent-foreground" disabled={!canPhoto} checked={photo && canPhoto} onChange={(e) => setPhoto(e.target.checked)} /> Desenho feito a partir de fotografia (+2 €)</label>
       </fieldset>
       <div aria-live="polite" className="rounded-xl bg-muted px-5 py-4">
         <div className="flex items-baseline justify-between"><span className="text-sm text-muted-foreground">Estimativa</span><b className="text-3xl font-medium tracking-tight tabular-nums">{eur(total)}</b></div>
         <p className="mt-1 min-h-[1.25rem] text-xs text-muted-foreground">{hint || (n > 1 ? `${eur(unit)} por peça.` : "")}</p>
       </div>
-      <button type="submit" className="rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background outline-none transition-[transform,box-shadow] hover:-translate-y-px hover:shadow-md focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background">
+      <button type="submit" className="rounded-full bg-foreground px-5 py-3.5 text-sm font-medium text-background outline-none transition-[transform,box-shadow] hover:-translate-y-px hover:shadow-md focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background">
         {CONTACT.whatsapp ? "Enviar pedido por WhatsApp" : "Copiar o meu pedido"}
       </button>
       <p role="status" className="min-h-[1.25rem] text-sm text-muted-foreground">{msg}</p>

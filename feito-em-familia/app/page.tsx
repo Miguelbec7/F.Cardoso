@@ -123,7 +123,7 @@ export default function Page() {
             <article className={`${card} flex flex-col gap-1 p-6`}>
               <h3 className="font-medium">Sweats de Natal com nome</h3>
               <p className="text-xs text-muted-foreground">Preços da tabela de roupa</p>
-              <a href="#precos" className="mt-4 text-sm font-medium underline underline-offset-4">Ver preços</a>
+              <a href="#precos" className="mt-2 inline-block py-2 text-sm font-medium underline underline-offset-4">Ver preços</a>
             </article>
           </div>
         </Section>
