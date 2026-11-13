@@ -1,9 +1,8 @@
-name: Feito em Família · GitHub Pages
+name: GitHub Pages
 
 on:
   push:
-    branches: [main, claude/clever-volta-3uby0o]
-    paths: ["feito-em-familia/**", ".github/workflows/feito-em-familia-pages.yml"]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -18,24 +17,21 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: feito-em-familia
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: feito-em-familia/package-lock.json
       - run: npm ci
       - run: npm run build
         env:
-          BASE_PATH: /${{ github.event.repository.name }}
+          # Em "nome.github.io" ou com domínio próprio não há prefixo; nos outros casos usa /nome-do-repositorio
+          BASE_PATH: ${{ endsWith(github.event.repository.name, '.github.io') && '' || format('/{0}', github.event.repository.name) }}
       - run: touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: feito-em-familia/out
+          path: out
 
   deploy:
     needs: build
