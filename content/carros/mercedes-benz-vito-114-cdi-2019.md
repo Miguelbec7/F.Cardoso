@@ -15,6 +15,7 @@ cilindrada: 2143 cc
 potencia: 136
 cor: Branco
 preco: 28500
+precoAnterior: 29900
 equipamento:
   seguranca:
     - Câmara de marcha atrás
