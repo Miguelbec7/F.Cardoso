@@ -3,7 +3,8 @@ marca: Audi
 modelo: A1
 versao: Sportback 1.6 TDI Advance
 ano: 2012
-estado: disponivel
+estado: vendido
+vendidoEm: 2026-11-14
 destaque: false
 carroDaSemana: false
 recemChegado: true
