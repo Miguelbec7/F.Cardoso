@@ -15,7 +15,7 @@ carroceria: SUV
 cilindrada: 1580 cc
 potencia: 141
 cor: ""
-preco: 18500
+preco: 17950
 equipamento:
   multimedia:
     - Digital Cockpit
