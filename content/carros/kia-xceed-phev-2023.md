@@ -8,7 +8,7 @@ vendidoEm: ""
 destaque: true
 carroDaSemana: false
 recemChegado: true
-km: 152000
+km: 155000
 combustivel: Híbrido
 caixa: Automática
 carroceria: SUV
@@ -37,7 +37,7 @@ descricao: Kia XCeed plug-in hybrid, SUV/crossover espaçoso e bem equipado,
   tecnologia. Apenas um dono, com revisões sempre realizadas na marca. Consumos
   muito reduzidos e caixa automática suave e eficiente. Aceita retoma,
   financiamento até 120 meses e possibilidade de dedução de IVA para empresas.
-garantia: 12 meses de garantia mecânica
+garantia: Garantia mecânica
 localizacao: Elvas
 criadoEm: 2026-08-30
 fotos:
