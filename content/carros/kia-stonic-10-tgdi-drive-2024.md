@@ -14,6 +14,7 @@ carroceria: SUV
 cilindrada: 998 cc
 potencia: 101
 cor: Azul
+preco: 17950
 equipamento:
   outros:
     - Garantia Kia até 12/2031 ou 150.000 km
